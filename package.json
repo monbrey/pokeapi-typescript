@@ -1,0 +1,36 @@
+{
+  "name": "pokeapi-typescript",
+  "version": "1.0.0",
+  "description": "Typescript SDK for PokeAPI (https://pokeapi.co)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "Pokemon",
+    "PokeAPI",
+    "Typescript",
+    "API"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Monbrey",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monbrey/pokeapi-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Monbrey/pokeapi-typescript/issues"
+  },
+  "homepage": "https://github.com/Monbrey/pokeapi-typescript#readme",
+  "dependencies": {
+    "collection": "discordjs/collection",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.0",
+    "tslint": "^5.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.5.3"
+  }
+}

@@ -1,7 +1,6 @@
 import Collection = require("collection");
 import fetch from "node-fetch";
-import { stringify } from "querystring";
-import { ICacheableResource, INamedApiResource } from "../interfaces/Utility/CommonModels";
+import { INamedApiResource } from "../interfaces/Utility/CommonModels";
 
 export type EndpointParams = number | string | Array<number | string>;
 
@@ -11,17 +10,17 @@ export default class Endpoint<T> {
     // Name of the API endpoint
     private resource: string;
     // Collection of all cached resources
-    private cache: Collection<number, ICacheableResource>;
+    private cache: Collection<number, T>;
     // Mapping of names to IDs for cache
     private nameMap: Map<string, number>;
 
     constructor(resource) {
         this.resource = resource;
-        this.cache = new Collection<number, ICacheableResource>();
+        this.cache = new Collection<number, T>();
         this.nameMap = new Map<string, number>();
     }
 
-    public get(param: EndpointParams): ICacheableResource | ICacheableResource[] {
+    public get(param: EndpointParams): T | T[] {
         switch (typeof (param)) {
             case "number":
                 return this.cache.get(param);
@@ -40,11 +39,11 @@ export default class Endpoint<T> {
         }
     }
 
-    public getAll(): Collection<number, ICacheableResource> {
+    public getAll(): Collection<number, T> {
         return this.cache;
     }
 
-    public async resolve(param: EndpointParams): Promise<ICacheableResource | ICacheableResource[]> {
+    public async resolve(param: EndpointParams): Promise<T | T[]> {
         switch (typeof (param)) {
             case "number":
                 return this.cache.get(param) || this.fetch(param);
@@ -60,7 +59,7 @@ export default class Endpoint<T> {
         }
     }
 
-    public async fetch(param: EndpointParams): Promise<ICacheableResource | ICacheableResource[]> {
+    public async fetch(param: EndpointParams): Promise<T | T[]> {
         if (typeof param === "object") {
             return Promise.all(param.map(async p => {
                 const data = await fetch(`${BASE_URI}/${this.resource}/${param}`).then(res => res.json());

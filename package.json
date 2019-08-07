@@ -2,6 +2,9 @@
   "name": "pokeapi-typescript",
   "version": "1.0.0",
   "description": "Typescript SDK for PokeAPI (https://pokeapi.co)",
+  "files": [
+    "dist/**/*"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
@@ -11,7 +14,12 @@
     "API"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "author": "Monbrey",
   "license": "MIT",

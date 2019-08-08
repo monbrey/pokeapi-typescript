@@ -62,12 +62,12 @@ export default class Endpoint<T> {
             case "number":
                 return this.cache.get(param) || this.fetch(param);
             case "string":
-                return this.cache.get(this.nameMap.get(param)) || this.fetch(param);
+                return this.cache.get(this.nameMap.get(param.toLowerCase())) || this.fetch(param);
             case "object":
                 return Promise.all(param.map(async p => {
                     switch (typeof (p)) {
                         case "number": return this.cache.get(p) || this.fetch(p);
-                        case "string": return this.cache.get(this.nameMap.get(p)) || this.fetch(p);
+                        case "string": return this.cache.get(this.nameMap.get(p.toLowerCase())) || this.fetch(p);
                     }
                 }).flat());
         }
@@ -88,6 +88,7 @@ export default class Endpoint<T> {
                 return data;
             }));
         } else {
+            param = typeof param === "string" ? param.toLowerCase() : param;
             const data = await fetch(`${BASE_URI}/${this.resource}/${param}`).then(res => res.json());
             this.cache.set(data.id, data);
             this.nameMap.set(data.name, data.id);
@@ -98,10 +99,10 @@ export default class Endpoint<T> {
     // /**
     //  * Fetches the resource list from the API. Results are not cached.
     //  * @param {number} [limit=20] - How many resources to fetch
-    //  * @param {offset} [offset=0] -
+    //  * @param {offset} [offset=0]
     //  * @returns {Promise<INamedApiResource<T>>}
     //  */
-    // public async fetchAll(limit = 20, offset?): Promise<INamedApiResource<T>> {
+    // public async list(limit = 10000, offset = 0): Promise<INamedApiResource<T>> {
     //     return fetch(`${BASE_URI}/${this.resource}`).then(res => res.json());
     // }
 }

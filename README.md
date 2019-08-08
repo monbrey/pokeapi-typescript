@@ -8,7 +8,7 @@ pokeapi-typescript is a fully-typed SDK for the [PokeAPI](https://pokeapi.co) us
 
 Via yarn: `yarn add pokeapi-typescript`
 
-Via npm: `install pokeapi-typescript`
+Via npm: `npm install pokeapi-typescript`
 
 ## Getting Started
 
@@ -24,25 +24,61 @@ const Client = new PokeAPI();
 
 ### Endpoints
 
-Every endpoint on documented in the [PokeAPI Docs](https://pokeapi.co/docs/v2.html) is available. By default, any data that is fetched will be cached in-memory.
+Every endpoint documented in the [PokeAPI Docs](https://pokeapi.co/docs/v2.html) is available. By default, any data that is fetched will be cached in-memory.
 
 `Client.<Endpoint>.resolve()` retrieves a resource, first checking the internal cache to see if it is available. If no cached resource exists, it will be fetched via the API.
 
-By ID:
+#### By ID:
 ```js
-Client.Pokemon.fetch("pikachu").then(result => console.log(result));
+// Using .then()
+Client.Pokemon.resolve(25).then(result => console.log(result));
+
+// Using async/await
+const result = await Client.Pokemon.resolve(25);
 ```
 
-By Name:
+#### By Name
 ```js
-Client.Pokemon.fetch(25).then(result => console.log(result));
-```
+// Using.then()
+Client.Pokemon.resolve("pikachu").then(result => console.log(result));
 
-`Client.<Endpoint>.get()` will always retrieve a cached resource, returning null if one could not be found.
+// Using async/await
+const result = await Client.Pokemon.resolve("pikachu");
+```
 
 `Client.<Endpoint>.fetch()` will always retrieve a resource via the API, updating any cached resources in the process.
 
-Support for retrieving and caching full resource lists is comming soon.
+#### By ID:
+```js
+// Using .then()
+Client.Pokemon.fetch(25).then(result => console.log(result));
+
+// Using async/await
+const result = await Client.Pokemon.fetch(25);
+```
+
+#### By Name
+```js
+// Using.then()
+Client.Pokemon.fetch("pikachu").then(result => console.log(result));
+
+// Using async/await
+const result = await Client.Pokemon.fetch("pikachu");
+```
+
+`Client.<Endpoint>.get()` will always retrieve a cached resource, returning null if one could not be found. `.get()` is synchronous and does not return a Promise.
+
+#### By ID:
+```js
+const result = Client.Pokemon.get(25);
+```
+
+#### By Name
+```js
+const result = Client.Pokemon.get("pikachu");
+```
+
+Support for retrieving and caching full resource lists, and performing fuzzy name matching is coming soon.
 
 ## Endpoints
 

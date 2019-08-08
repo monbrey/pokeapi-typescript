@@ -26,9 +26,11 @@ const Client = new PokeAPI();
 
 Every endpoint documented in the [PokeAPI Docs](https://pokeapi.co/docs/v2.html) is available. By default, any data that is fetched will be cached in-memory.
 
+### .resolve()
+
 `Client.<Endpoint>.resolve()` retrieves a resource, first checking the internal cache to see if it is available. If no cached resource exists, it will be fetched via the API.
 
-#### By ID:
+#### By ID
 ```js
 // Using .then()
 Client.Pokemon.resolve(25).then(result => console.log(result));
@@ -46,9 +48,11 @@ Client.Pokemon.resolve("pikachu").then(result => console.log(result));
 const result = await Client.Pokemon.resolve("pikachu");
 ```
 
+### .fetch()
+
 `Client.<Endpoint>.fetch()` will always retrieve a resource via the API, updating any cached resources in the process.
 
-#### By ID:
+#### By ID
 ```js
 // Using .then()
 Client.Pokemon.fetch(25).then(result => console.log(result));
@@ -66,9 +70,11 @@ Client.Pokemon.fetch("pikachu").then(result => console.log(result));
 const result = await Client.Pokemon.fetch("pikachu");
 ```
 
+### .get()
+
 `Client.<Endpoint>.get()` will always retrieve a cached resource, returning null if one could not be found. `.get()` is synchronous and does not return a Promise.
 
-#### By ID:
+#### By ID
 ```js
 const result = Client.Pokemon.get(25);
 ```

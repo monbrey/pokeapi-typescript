@@ -1,6 +1,14 @@
 import { IEvolutionChain } from "../Evolution/EvolutionChain";
 import { IVersion } from "../Games/Version";
-import { IApiResource, IGenerationGameIndex, IMachineVersionDetail, IName, INamedApiResource, IVerboseEffect, IVersionGroupFlavorText } from "../Utility/CommonModels";
+import {
+    IApiResource,
+    IGenerationGameIndex,
+    IMachineVersionDetail,
+    IName,
+    INamedApiResource,
+    IVerboseEffect,
+    IVersionGroupFlavorText
+} from "../Utility/CommonModels";
 import { IItemAttribute } from "./ItemAttribute";
 import { IItemCategory } from "./ItemCategory";
 import { IItemFlingEffect } from "./ItemFlingEffect";

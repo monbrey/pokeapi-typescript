@@ -98,7 +98,7 @@ export default class Endpoint<T> {
     // /**
     //  * Fetches the resource list from the API. Results are not cached.
     //  * @param {number} [limit=20] - How many resources to fetch
-    //  * @param {offset} [offset=0] - 
+    //  * @param {offset} [offset=0] -
     //  * @returns {Promise<INamedApiResource<T>>}
     //  */
     // public async fetchAll(limit = 20, offset?): Promise<INamedApiResource<T>> {

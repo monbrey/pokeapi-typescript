@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "lint": "tslint -p tsconfig.json",
+    "lint": "npx tslint -p tsconfig.json --fix",
     "prepare": "npm run build",
     "preversion": "npm run lint",
     "version": "git add -A src",

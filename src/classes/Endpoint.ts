@@ -44,13 +44,13 @@ export default class Endpoint<T> {
         }
     }
 
-    /**
-     * Returns all resources currently cached from this endpoint as a Collection
-     * @returns {Collection<number, T>}
-     */
-    public getAll(): Collection<number, T> {
-        return this.cache;
-    }
+    // /**
+    //  * Returns all resources currently cached from this endpoint as a Collection
+    //  * @returns {Collection<number, T>}
+    //  */
+    // public getAll(): Collection<number, T> {
+    //     return this.cache;
+    // }
 
     /**
      * Gets an item from cache, or attempts to fetch it from the API if no cached resource is available

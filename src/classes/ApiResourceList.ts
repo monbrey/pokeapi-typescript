@@ -1,7 +1,6 @@
-import { IApiResource, INamedApiResource } from "../interfaces/Utility/CommonModels";
+import { IApiResource } from "../interfaces/Utility/CommonModels";
 import { IApiResourceList } from "../interfaces/Utility/ResourceList";
 import ApiResource from "./ApiResource";
-import NamedApiResource from "./NamedApiResource";
 
 export default class ApiResourceList<T> implements IApiResourceList<T> {
     public count: number;

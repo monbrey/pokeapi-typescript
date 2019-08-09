@@ -14,4 +14,3 @@ export interface INamedApiResourceList<T> {
     previous: string;
     results: Array<NamedApiResource<T>>;
 }
-

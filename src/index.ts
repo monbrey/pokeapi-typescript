@@ -1,4 +1,5 @@
 import Endpoint from "./classes/Endpoint";
+import NamedEndpoint from "./classes/NamedEndpoint";
 import { IBerry } from "./interfaces/Berries/Berry";
 import { IBerryFirmness } from "./interfaces/Berries/BerryFirmness";
 import { IBerryFlavor } from "./interfaces/Berries/BerryFlavor";
@@ -48,65 +49,68 @@ import { IStat } from "./interfaces/Pokemon/Stat";
 import { IType } from "./interfaces/Pokemon/Type";
 import { ILanguage } from "./interfaces/Utility/Language";
 
-export default class PokeAPI {
-    public Berry = new Endpoint<IBerry>("berry");
-    public BerryFirmness = new Endpoint<IBerryFirmness>("berry-firmness");
-    public BerryFlavor = new Endpoint<IBerryFlavor>("berry-flavor");
+class PokeAPI {
+    public Berry = new NamedEndpoint<IBerry>("berry");
+    public BerryFirmness = new NamedEndpoint<IBerryFirmness>("berry-firmness");
+    public BerryFlavor = new NamedEndpoint<IBerryFlavor>("berry-flavor");
 
+    public ContestType = new NamedEndpoint<IContestType>("contest-type");
     public ContestEffect = new Endpoint<IContestEffect>("contest-effect");
-    public ContestType = new Endpoint<IContestType>("contest-type");
     public SuperContestEffect = new Endpoint<ISuperContestEffect>("super-contest-effect");
 
-    public EncounterCondition = new Endpoint<IEncounterCondition>("encounter-condition");
-    public EncounterConditionValue = new Endpoint<IEncounterConditionValue>("encounter-condition-value");
-    public EncounterMethod = new Endpoint<IEncounterMethod>("encounter-method");
+    public EncounterMethod = new NamedEndpoint<IEncounterMethod>("encounter-method");
+    public EncounterCondition = new NamedEndpoint<IEncounterCondition>("encounter-condition");
+    public EncounterConditionValue = new NamedEndpoint<IEncounterConditionValue>("encounter-condition-value");
 
     public EvolutionChain = new Endpoint<IEvolutionChain>("evolution-chain");
-    public EvolutionTrigger = new Endpoint<IEvolutionTrigger>("evolution-trigger");
+    public EvolutionTrigger = new NamedEndpoint<IEvolutionTrigger>("evolution-trigger");
 
-    public Generaition = new Endpoint<IGeneration>("generation");
-    public Pokedex = new Endpoint<IPokedex>("pokedex");
-    public Version = new Endpoint<IVersion>("version");
-    public VerionGroup = new Endpoint<IVersionGroup>("version-group");
+    public Generaition = new NamedEndpoint<IGeneration>("generation");
+    public Pokedex = new NamedEndpoint<IPokedex>("pokedex");
+    public Version = new NamedEndpoint<IVersion>("version");
+    public VerionGroup = new NamedEndpoint<IVersionGroup>("version-group");
 
-    public Item = new Endpoint<IItem>("item");
-    public ItemAttribute = new Endpoint<IItemAttribute>("item-attribute");
-    public ItemCategory = new Endpoint<IItemCategory>("item-category");
-    public ItemFlingEffect = new Endpoint<IItemFlingEffect>("item-fling-effect");
-    public ItemPocket = new Endpoint<IItemPocket>("item-pocket");
+    public Item = new NamedEndpoint<IItem>("item");
+    public ItemAttribute = new NamedEndpoint<IItemAttribute>("item-attribute");
+    public ItemCategory = new NamedEndpoint<IItemCategory>("item-category");
+    public ItemFlingEffect = new NamedEndpoint<IItemFlingEffect>("item-fling-effect");
+    public ItemPocket = new NamedEndpoint<IItemPocket>("item-pocket");
 
-    public Location = new Endpoint<ILocation>("location");
-    public LocationArea = new Endpoint<ILocationArea>("location-area");
-    public PalParkArea = new Endpoint<IPalParkArea>("pal-park-area");
-    public Region = new Endpoint<IRegion>("region");
+    public Location = new NamedEndpoint<ILocation>("location");
+    public LocationArea = new NamedEndpoint<ILocationArea>("location-area");
+    public PalParkArea = new NamedEndpoint<IPalParkArea>("pal-park-area");
+    public Region = new NamedEndpoint<IRegion>("region");
 
     public Machine = new Endpoint<IMachine>("machine");
 
-    public Move = new Endpoint<IMove>("move");
-    public MoveAilment = new Endpoint<IMoveAilment>("move-ailment");
-    public MoveBattleStyle = new Endpoint<IMoveBattleStyle>("move-battle-style");
-    public MoveCategory = new Endpoint<IMoveCategory>("move-category");
-    public MoveDamageClass = new Endpoint<IMoveDamageClass>("move-damage-class");
-    public MoveLearnMethod = new Endpoint<IMoveLearnMethod>("move-learn-method");
-    public MoveTarget = new Endpoint<IMoveTarget>("move-target");
+    public Move = new NamedEndpoint<IMove>("move");
+    public MoveAilment = new NamedEndpoint<IMoveAilment>("move-ailment");
+    public MoveBattleStyle = new NamedEndpoint<IMoveBattleStyle>("move-battle-style");
+    public MoveCategory = new NamedEndpoint<IMoveCategory>("move-category");
+    public MoveDamageClass = new NamedEndpoint<IMoveDamageClass>("move-damage-class");
+    public MoveLearnMethod = new NamedEndpoint<IMoveLearnMethod>("move-learn-method");
+    public MoveTarget = new NamedEndpoint<IMoveTarget>("move-target");
 
-    public Ability = new Endpoint<IAbility>("ability");
+    public Ability = new NamedEndpoint<IAbility>("ability");
     public Characteristic = new Endpoint<ICharacteristic>("characteristic");
-    public EggGroup = new Endpoint<IEggGroup>("egg-group");
-    public Gender = new Endpoint<IGender>("gender");
-    public GrowthRate = new Endpoint<IGrowthRate>("growth-rate");
-    public Nature = new Endpoint<INature>("nature");
-    public PokeathlonStat = new Endpoint<IPokeathlonStat>("pokeathlon-stat");
-    public Pokemon = new Endpoint<IPokemon>("pokemon");
-    public PokemonColor = new Endpoint<IPokemonColor>("pokemon-color");
-    public PokemonForm = new Endpoint<IPokemonForm>("pokemon-form");
-    public PokemonHabitat = new Endpoint<IPokemonHabitat>("pokemon-habitat");
-    public PokemonShape = new Endpoint<IPokemonShape>("pokemon-shape");
-    public PokemonSpecies = new Endpoint<IPokemonSpecies>("pokemon-species");
-    public Stat = new Endpoint<IStat>("stat");
-    public Type = new Endpoint<IType>("type");
+    public EggGroup = new NamedEndpoint<IEggGroup>("egg-group");
+    public Gender = new NamedEndpoint<IGender>("gender");
+    public GrowthRate = new NamedEndpoint<IGrowthRate>("growth-rate");
+    public Nature = new NamedEndpoint<INature>("nature");
+    public PokeathlonStat = new NamedEndpoint<IPokeathlonStat>("pokeathlon-stat");
+    public Pokemon = new NamedEndpoint<IPokemon>("pokemon");
+    public PokemonColor = new NamedEndpoint<IPokemonColor>("pokemon-color");
+    public PokemonForm = new NamedEndpoint<IPokemonForm>("pokemon-form");
+    public PokemonHabitat = new NamedEndpoint<IPokemonHabitat>("pokemon-habitat");
+    public PokemonShape = new NamedEndpoint<IPokemonShape>("pokemon-shape");
+    public PokemonSpecies = new NamedEndpoint<IPokemonSpecies>("pokemon-species");
+    public Stat = new NamedEndpoint<IStat>("stat");
+    public Type = new NamedEndpoint<IType>("type");
 
-    public Language = new Endpoint<ILanguage>("language");
+    public Language = new NamedEndpoint<ILanguage>("language");
 
     constructor() { }
 }
+
+module.exports = PokeAPI;
+export default PokeAPI;

@@ -84,9 +84,28 @@ const result = Client.Pokemon.get(25);
 const result = Client.Pokemon.get("pikachu");
 ```
 
-Support for retrieving and caching full resource lists, and performing fuzzy name matching is coming soon.
+### .list()
 
-## Endpoints
+`Client.<Endpoint>.list()` retrieves the [ApiResourceList](https://pokeapi.co/docs/v2.html#un-named) or [NamedApiResourceList](https://pokeapi.co/docs/v2.html#named) for an endpoint.
+
+`list()` accepts two parameters for pagination
+ - `limit` - Number of results to list. Default 20
+ - `offset` - Index of result to start listing from. Default 0
+
+```js
+// Fetch 1000 Pokemon (all) in a NamedApiResourceList
+const resourceList = await Client.Pokemon.list(1000, 0);
+```
+`resourceList.results` will contain an array of `ApiResource` or `NamedApiResource` objects depending on the type of list.
+
+An individual `ApiResource` can then be fetched, caching the resource by default.
+
+```js
+const pikaResource = resourceList.find(r => r.name === "pikachu");
+const pikachu = await pikaResource.fetch();
+```
+
+## Endpoint List
 
 #### Berries
 

@@ -1,108 +1,67 @@
 import Collection = require("collection");
 import fetch from "node-fetch";
-import { INamedApiResource } from "../interfaces/Utility/CommonModels";
+import { URLSearchParams } from "url";
+import ApiResourceList from "./ApiResourceList";
+import NamedApiResourceList from "./NamedApiResourceList";
 
-export type EndpointParam = number | string | Array<number | string>;
+export type EndpointParam = number;
 
 const BASE_URI = "https://pokeapi.co/api/v2";
 
 export default class Endpoint<T> {
     // Name of the API endpoint
-    private resource: string;
+    protected resource: string;
     // Collection of all cached resources
-    private cache: Collection<number, T>;
-    // Mapping of names to IDs for cache
-    private nameMap: Map<string, number>;
+    protected cache: Collection<number, T>;
 
     constructor(resource) {
         this.resource = resource;
         this.cache = new Collection<number, T>();
-        this.nameMap = new Map<string, number>();
     }
 
     /**
-     * Retrieves an item from the cache by name or ID
-     * @param {EndpointParam} param - The name/ID of the item to get, or Array of names/IDs
-     * @returns {?T|Array<?T>}
+     * Retrieve a resource from the cache
+     * @param {EndpointParam} param - The ID of the resource to retrieve from cache
+     * @returns {?T}
      */
-    public get(param: EndpointParam): T | T[] {
-        switch (typeof (param)) {
-            case "number":
-                return this.cache.get(param);
-            case "string":
-                return this.cache.get(this.nameMap.get(param));
-            case "object":
-                return param.map(p => {
-                    switch (typeof (p)) {
-                        case "number":
-                            return this.cache.get(p);
-                        case "string":
-                            return this.cache.get(this.nameMap.get(p));
-
-                    }
-                });
-        }
+    public get(param: EndpointParam): T {
+        return this.cache.get(param);
     }
 
-    // /**
-    //  * Returns all resources currently cached from this endpoint as a Collection
-    //  * @returns {Collection<number, T>}
-    //  */
-    // public getAll(): Collection<number, T> {
-    //     return this.cache;
-    // }
-
     /**
-     * Gets an item from cache, or attempts to fetch it from the API if no cached resource is available
-     * @param {EndpointParam} param - The name/ID of the item to resolve, or Array of names/IDs
-     * @returns {Promise<T|T[]>}
+     * Retrieve a resource from cache if it exists, or attempt to fetch it from the API
+     * @param {EndpointParam} param - The ID of the resource to resolve
+     * @returns {Promise<T>}
      */
-    public async resolve(param: EndpointParam): Promise<T | T[]> {
-        switch (typeof (param)) {
-            case "number":
-                return this.cache.get(param) || this.fetch(param);
-            case "string":
-                return this.cache.get(this.nameMap.get(param.toLowerCase())) || this.fetch(param);
-            case "object":
-                return Promise.all(param.map(async p => {
-                    switch (typeof (p)) {
-                        case "number": return this.cache.get(p) || this.fetch(p);
-                        case "string": return this.cache.get(this.nameMap.get(p.toLowerCase())) || this.fetch(p);
-                    }
-                }).flat());
-        }
+    public async resolve(param: EndpointParam): Promise<T> {
+        return this.get(param) || this.fetch(param);
     }
 
     /**
-     * Fetches a resource from the API
-     * @param {EndpointParam} param - The name/ID of the item to fetch, or Array of names/IDs
+     * Fetch a resource from the API
+     * @param {EndpointParam} param - The ID of the item to fetch
      * @param {boolean} [cache=true] - Whether or not to cache this resource
-     * @returns {Promise<T|T[]>}
+     * @returns {Promise<T>}
      */
-    public async fetch(param: EndpointParam, cache: boolean = true): Promise<T | T[]> {
-        if (typeof param === "object") {
-            return Promise.all(param.map(async p => {
-                const data = await fetch(`${BASE_URI}/${this.resource}/${param}`).then(res => res.json());
-                this.cache.set(data.id, data);
-                this.nameMap.set(data.name, data.id);
-                return data;
-            }));
-        } else {
-            param = typeof param === "string" ? param.toLowerCase() : param;
-            const data = await fetch(`${BASE_URI}/${this.resource}/${param}`).then(res => res.json());
-            this.cache.set(data.id, data);
-            this.nameMap.set(data.name, data.id);
-            return data;
-        }
+    public async fetch(param: EndpointParam, cache: boolean = true): Promise<T> {
+        const data = await fetch(`${BASE_URI}/${this.resource}/${param}`).then(res => res.json());
+        this._cache(data);
+        return data;
     }
 
-    // /**
-    //  * Fetches the resource list from the API. Results are not cached.
-    //  * @param {number} [limit=20] - How many resources to fetch
-    //  * @param {offset} [offset=0]
-    //  * @returns {Promise<INamedApiResource<T>>}
-    //  */
-    // public async list(limit = 10000, offset = 0): Promise<INamedApiResource<T>> {
-    //     return fetch(`${BASE_URI}/${this.resource}`).then(res => res.json());
-    // }
+    /**
+     * Fetches the resource list from the API. Results are not cached.
+     * @param {number} [limit=10000] - How many resources to list
+     * @param {offset} [offset=0]
+     * @returns {Promise<ApiResourceList<T>>}
+     */
+    public async list(limit = 10000, offset = 0): Promise<ApiResourceList <T>> {
+        const params = new URLSearchParams({ limit: `${limit}`, offset: `${offset}` });
+        const list = await fetch(`${BASE_URI}/${this.resource}?${params}`).then(res => res.json());
+        return new ApiResourceList<T>(list, this);
+    }
+
+    public _cache(data) {
+        this.cache.set(data.id, data);
+    }
 }

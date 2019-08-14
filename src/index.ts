@@ -60,6 +60,7 @@ class PokeAPI {
 
     public EncounterMethod = new NamedEndpoint<EncounterMethodTypes.IEncounterMethod>("encounter-method");
     public EncounterCondition = new NamedEndpoint<EncounterConditionTypes.IEncounterCondition>("encounter-condition");
+    // tslint:disable-next-line: max-line-length
     public EncounterConditionValue = new NamedEndpoint<EncounterConditionValueTypes.IEncounterConditionValue>("encounter-condition-value");
 
     public EvolutionChain = new Endpoint<EvolutionChainTypes.IEvolutionChain>("evolution-chain");

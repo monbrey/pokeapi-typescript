@@ -113,4 +113,66 @@ class PokeAPI {
 }
 
 module.exports = PokeAPI;
+module.exports.Endpoint = Endpoint;
+module.exports.NamedEndpoint = NamedEndpoint;
+
 export default PokeAPI;
+
+export type Berry = IBerry;
+export type BerryFirmness = IBerryFirmness;
+export type BerryFlavor = IBerryFlavor;
+
+export type ContestType = IContestType;
+export type ContestEffect = IContestEffect;
+export type SuperContestEffect = ISuperContestEffect;
+
+export type EncounterMethod = IEncounterMethod;
+export type EncounterCondition = IEncounterCondition;
+export type EncounterConditionValue = IEncounterConditionValue;
+
+export type EvolutionChain = IEvolutionChain;
+export type EvolutionTrigger = IEvolutionTrigger;
+
+export type Generaition = IGeneration;
+export type Pokedex = IPokedex;
+export type Version = IVersion;
+export type VerionGroup = IVersionGroup;
+
+export type Item = IItem;
+export type ItemAttribute = IItemAttribute;
+export type ItemCategory = IItemCategory;
+export type ItemFlingEffect = IItemFlingEffect;
+export type ItemPocket = IItemPocket;
+
+export type Location = ILocation;
+export type LocationArea = ILocationArea;
+export type PalParkArea = IPalParkArea;
+export type Region = IRegion;
+
+export type Machine = IMachine;
+
+export type Move = IMove;
+export type MoveAilment = IMoveAilment;
+export type MoveBattleStyle = IMoveBattleStyle;
+export type MoveCategory = IMoveCategory;
+export type MoveDamageClass = IMoveDamageClass;
+export type MoveLearnMethod = IMoveLearnMethod;
+export type MoveTarget = IMoveTarget;
+
+export type Ability = IAbility;
+export type Characteristic = ICharacteristic;
+export type EggGroup = IEggGroup;
+export type Gender = IGender;
+export type GrowthRate = IGrowthRate;
+export type Nature = INature;
+export type PokeathlonStat = IPokeathlonStat;
+export type Pokemon = IPokemon;
+export type PokemonColor = IPokemonColor;
+export type PokemonForm = IPokemonForm;
+export type PokemonHabitat = IPokemonHabitat;
+export type PokemonShape = IPokemonShape;
+export type PokemonSpecies = IPokemonSpecies;
+export type Stat = IStat;
+export type Type = IType;
+
+export type Language = ILanguage;

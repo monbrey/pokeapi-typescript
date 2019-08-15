@@ -1,8 +1,8 @@
 import { INamedApiResource } from "../interfaces/Utility/CommonModels";
-import ApiResource from "./ApiResource";
-import NamedEndpoint from "./NamedEndpoint";
+import { ApiResource } from "./ApiResource";
+import { NamedEndpoint } from "./NamedEndpoint";
 
-export default class NamedApiResource<T> extends ApiResource<T> implements INamedApiResource<T> {
+export class NamedApiResource<T> extends ApiResource<T> implements INamedApiResource<T> {
     public name: string;
 
     constructor(data: INamedApiResource<T>, endpoint?: NamedEndpoint<T>, ) {

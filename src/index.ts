@@ -1,5 +1,5 @@
-import Endpoint from "./classes/Endpoint";
-import NamedEndpoint from "./classes/NamedEndpoint";
+import { Endpoint } from "./classes/Endpoint";
+import { NamedEndpoint } from "./classes/NamedEndpoint";
 import { IBerry } from "./interfaces/Berries/Berry";
 import { IBerryFirmness } from "./interfaces/Berries/BerryFirmness";
 import { IBerryFlavor } from "./interfaces/Berries/BerryFlavor";

@@ -1,9 +1,9 @@
 import { INamedApiResource } from "../interfaces/Utility/CommonModels";
 import { INamedApiResourceList } from "../interfaces/Utility/ResourceList";
-import ApiResourceList from "./ApiResourceList";
-import NamedApiResource from "./NamedApiResource";
+import { ApiResourceList } from "./ApiResourceList";
+import { NamedApiResource } from "./NamedApiResource";
 
-export default class NamedApiResourceList<T> extends ApiResourceList<T> implements INamedApiResourceList<T> {
+export class NamedApiResourceList<T> extends ApiResourceList<T> implements INamedApiResourceList<T> {
     public results: Array<NamedApiResource<T>>;
 
     constructor({ count, next, previous, results }, endpoint) {

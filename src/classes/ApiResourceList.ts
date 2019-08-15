@@ -1,8 +1,8 @@
 import { IApiResource } from "../interfaces/Utility/CommonModels";
 import { IApiResourceList } from "../interfaces/Utility/ResourceList";
-import ApiResource from "./ApiResource";
+import { ApiResource } from "./ApiResource";
 
-export default class ApiResourceList<T> implements IApiResourceList<T> {
+export class ApiResourceList<T> implements IApiResourceList<T> {
     public count: number;
     public next: string;
     public previous: string;

@@ -1,14 +1,14 @@
 import fetch from "node-fetch";
 import { URLSearchParams } from "url";
 import nonenumerable from "../decorators/enumerable";
-import Endpoint, { EndpointParam } from "./Endpoint";
-import NamedApiResourceList from "./NamedApiResourceList";
+import { Endpoint, EndpointParam } from "./Endpoint";
+import { NamedApiResourceList } from "./NamedApiResourceList";
 
 export type NamedEndpointParam = EndpointParam | string;
 
 const BASE_URI = "https://pokeapi.co/api/v2";
 
-export default class NamedEndpoint<T> extends Endpoint<T> {
+export class NamedEndpoint<T> extends Endpoint<T> {
     @nonenumerable
     protected _list: NamedApiResourceList<T>;
     @nonenumerable

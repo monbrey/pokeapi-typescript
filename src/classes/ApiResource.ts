@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
 import { IApiResource } from "../interfaces/Utility/CommonModels";
-import Endpoint from "./Endpoint";
+import { Endpoint } from "./Endpoint";
 
-export default class ApiResource<T> implements IApiResource<T> {
+export class ApiResource<T> implements IApiResource<T> {
     public url: string;
     private endpoint: Endpoint<T>;
 

@@ -2,13 +2,14 @@ import Collection = require("collection");
 import fetch from "node-fetch";
 import { URLSearchParams } from "url";
 import nonenumerable from "../decorators/enumerable";
-import ApiResourceList from "./ApiResourceList";
+import { IApiResourceList } from "../interfaces/Utility/ResourceList";
+import { ApiResourceList } from "./ApiResourceList";
 
 export type EndpointParam = number;
 
 const BASE_URI = "https://pokeapi.co/api/v2";
 
-export default class Endpoint<T> {
+export class Endpoint<T> {
     @nonenumerable
     protected resource: string;
     @nonenumerable

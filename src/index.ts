@@ -116,7 +116,6 @@ module.exports = PokeAPI;
 
 export * from "./classes/Endpoint";
 export * from "./classes/NamedEndpoint";
-export { IApiResource, INamedApiResource } from "./interfaces/Utility/CommonModels";
 export * from "./interfaces/Berries/Berry";
 export * from "./interfaces/Berries/BerryFirmness";
 export * from "./interfaces/Berries/BerryFlavor";
@@ -165,5 +164,6 @@ export * from "./interfaces/Pokemon/PokemonSpecies";
 export * from "./interfaces/Pokemon/Stat";
 export * from "./interfaces/Pokemon/Type";
 export * from "./interfaces/Utility/Language";
+export * from "./interfaces/Utility/CommonModels";
 
 export default PokeAPI;

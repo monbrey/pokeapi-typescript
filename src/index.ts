@@ -113,66 +113,57 @@ class PokeAPI {
 }
 
 module.exports = PokeAPI;
-module.exports.Endpoint = Endpoint;
-module.exports.NamedEndpoint = NamedEndpoint;
+
+export * from "./classes/Endpoint";
+export * from "./classes/NamedEndpoint";
+export { IApiResource, INamedApiResource } from "./interfaces/Utility/CommonModels";
+export * from "./interfaces/Berries/Berry";
+export * from "./interfaces/Berries/BerryFirmness";
+export * from "./interfaces/Berries/BerryFlavor";
+export * from "./interfaces/Contests/ContestEffect";
+export * from "./interfaces/Contests/ContestType";
+export * from "./interfaces/Contests/SuperContestEffect";
+export * from "./interfaces/Encounters/EncounterCondition";
+export * from "./interfaces/Encounters/EncounterConditionValue";
+export * from "./interfaces/Encounters/EncounterMethod";
+export * from "./interfaces/Evolution/EvolutionChain";
+export * from "./interfaces/Evolution/EvolutionTrigger";
+export * from "./interfaces/Games/Generation";
+export * from "./interfaces/Games/Pokedex";
+export * from "./interfaces/Games/Version";
+export * from "./interfaces/Games/VersionGroup";
+export * from "./interfaces/Items/Item";
+export * from "./interfaces/Items/ItemAttribute";
+export * from "./interfaces/Items/ItemCategory";
+export * from "./interfaces/Items/ItemFlingEffect";
+export * from "./interfaces/Items/ItemPocket";
+export * from "./interfaces/Locations/Location";
+export * from "./interfaces/Locations/LocationArea";
+export * from "./interfaces/Locations/PalParkArea";
+export * from "./interfaces/Locations/Region";
+export * from "./interfaces/Machines/Machine";
+export * from "./interfaces/Moves/Move";
+export * from "./interfaces/Moves/MoveAilment";
+export * from "./interfaces/Moves/MoveBattleStyle";
+export * from "./interfaces/Moves/MoveCategory";
+export * from "./interfaces/Moves/MoveDamageClass";
+export * from "./interfaces/Moves/MoveLearnMethod";
+export * from "./interfaces/Moves/MoveTarget";
+export * from "./interfaces/Pokemon/Ability";
+export * from "./interfaces/Pokemon/Characteristic";
+export * from "./interfaces/Pokemon/EggGroup";
+export * from "./interfaces/Pokemon/Gender";
+export * from "./interfaces/Pokemon/GrowthRate";
+export * from "./interfaces/Pokemon/Nature";
+export * from "./interfaces/Pokemon/PokeathlonStat";
+export * from "./interfaces/Pokemon/Pokemon";
+export * from "./interfaces/Pokemon/PokemonColor";
+export * from "./interfaces/Pokemon/PokemonForm";
+export * from "./interfaces/Pokemon/PokemonHabitat";
+export * from "./interfaces/Pokemon/PokemonShape";
+export * from "./interfaces/Pokemon/PokemonSpecies";
+export * from "./interfaces/Pokemon/Stat";
+export * from "./interfaces/Pokemon/Type";
+export * from "./interfaces/Utility/Language";
 
 export default PokeAPI;
-
-export type Berry = IBerry;
-export type BerryFirmness = IBerryFirmness;
-export type BerryFlavor = IBerryFlavor;
-
-export type ContestType = IContestType;
-export type ContestEffect = IContestEffect;
-export type SuperContestEffect = ISuperContestEffect;
-
-export type EncounterMethod = IEncounterMethod;
-export type EncounterCondition = IEncounterCondition;
-export type EncounterConditionValue = IEncounterConditionValue;
-
-export type EvolutionChain = IEvolutionChain;
-export type EvolutionTrigger = IEvolutionTrigger;
-
-export type Generaition = IGeneration;
-export type Pokedex = IPokedex;
-export type Version = IVersion;
-export type VerionGroup = IVersionGroup;
-
-export type Item = IItem;
-export type ItemAttribute = IItemAttribute;
-export type ItemCategory = IItemCategory;
-export type ItemFlingEffect = IItemFlingEffect;
-export type ItemPocket = IItemPocket;
-
-export type Location = ILocation;
-export type LocationArea = ILocationArea;
-export type PalParkArea = IPalParkArea;
-export type Region = IRegion;
-
-export type Machine = IMachine;
-
-export type Move = IMove;
-export type MoveAilment = IMoveAilment;
-export type MoveBattleStyle = IMoveBattleStyle;
-export type MoveCategory = IMoveCategory;
-export type MoveDamageClass = IMoveDamageClass;
-export type MoveLearnMethod = IMoveLearnMethod;
-export type MoveTarget = IMoveTarget;
-
-export type Ability = IAbility;
-export type Characteristic = ICharacteristic;
-export type EggGroup = IEggGroup;
-export type Gender = IGender;
-export type GrowthRate = IGrowthRate;
-export type Nature = INature;
-export type PokeathlonStat = IPokeathlonStat;
-export type Pokemon = IPokemon;
-export type PokemonColor = IPokemonColor;
-export type PokemonForm = IPokemonForm;
-export type PokemonHabitat = IPokemonHabitat;
-export type PokemonShape = IPokemonShape;
-export type PokemonSpecies = IPokemonSpecies;
-export type Stat = IStat;
-export type Type = IType;
-
-export type Language = ILanguage;

@@ -1,5 +1,5 @@
-import ApiResource from "../../classes/ApiResource";
-import NamedApiResource from "../../classes/NamedApiResource";
+import { ApiResource } from "../../classes/ApiResource";
+import { NamedApiResource } from "../../classes/NamedApiResource";
 
 export interface IApiResourceList<T> {
     count: number;

@@ -43,6 +43,15 @@ export class NamedEndpoint<T> extends Endpoint<T> {
     }
 
     /**
+     * Retrieve a resource from cache if it exists, or attempt to fetch it from the API
+     * @param {EndpointParam} param - The ID of the resource to resolve
+     * @returns {Promise<T>}
+     */
+    public async resolve(param: NamedEndpointParam): Promise<T> {
+        return this.get(param) || this.fetch(param);
+    }
+
+    /**
      * Fetches the paginated resource list from the API, or uses the internal cache if listAll() has been called.
      * @param {number} [limit=20] - How many resources to list
      * @param {offset} [offset=0]

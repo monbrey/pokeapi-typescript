@@ -47,6 +47,7 @@ import { IPokemonShape } from "./interfaces/Pokemon/PokemonShape";
 import { IPokemonSpecies } from "./interfaces/Pokemon/PokemonSpecies";
 import { IStat } from "./interfaces/Pokemon/Stat";
 import { IType } from "./interfaces/Pokemon/Type";
+import { IApiResource } from "./interfaces/Utility/ApiResourceList";
 import { ILanguage } from "./interfaces/Utility/Language";
 
 export * from "./interfaces/Berries/Berry";
@@ -160,6 +161,17 @@ class PokeAPI {
     public static Type = new NamedEndpoint<IType>("type");
 
     public static Language = new NamedEndpoint<ILanguage>("language");
+
+    public static async fromResource(apiResource: IApiResource<any>) {
+        const [match, resource, id] = /([a-z-]+)\/(\d+)/.exec(apiResource.url);
+
+        if (apiResource.endpoint) {
+            return apiResource.endpoint.resolve(parseInt(id, 10));
+        }
+
+        const endpoint = Object.getOwnPropertyNames(this).find(prop => this[prop].resource === resource);
+        return this[endpoint].resolve(parseInt(id, 10));
+    }
 }
 
 module.exports = PokeAPI;

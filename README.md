@@ -12,14 +12,12 @@ Via npm: `npm install pokeapi-typescript`
 
 ## Getting Started
 
-To start using the PokeAPI, import the module and construct the API Client.
+To start using the PokeAPI, import the module. All available endpoints are mounted as static properties of the module.
 ```js
 // ES6 imports
 import PokeAPI from "pokeapi-typescript";
 // Node.js require
 const PokeAPI = require("pokeapi-typescript");
-
-const Client = new PokeAPI();
 ```
 
 ### Endpoints
@@ -28,65 +26,65 @@ Every endpoint documented in the [PokeAPI Docs](https://pokeapi.co/docs/v2.html)
 
 ### .resolve()
 
-`Client.<Endpoint>.resolve()` retrieves a resource, first checking the internal cache to see if it is available. If no cached resource exists, it will be fetched via the API.
+`PokeAPI.<Endpoint>.resolve()` retrieves a resource, first checking the internal cache to see if it is available. If no cached resource exists, it will be fetched via the API.
 
 #### By ID
 ```js
 // Using .then()
-Client.Pokemon.resolve(25).then(result => console.log(result));
+PokeAPI.Pokemon.resolve(25).then(result => console.log(result));
 
 // Using async/await
-const result = await Client.Pokemon.resolve(25);
+const result = await PokeAPI.Pokemon.resolve(25);
 ```
 
 #### By Name
 ```js
 // Using.then()
-Client.Pokemon.resolve("pikachu").then(result => console.log(result));
+PokeAPI.Pokemon.resolve("pikachu").then(result => console.log(result));
 
 // Using async/await
-const result = await Client.Pokemon.resolve("pikachu");
+const result = await PokeAPI.Pokemon.resolve("pikachu");
 ```
 
 ### .fetch()
 
-`Client.<Endpoint>.fetch()` will always retrieve a resource via the API, updating any cached resources in the process.
+`PokeAPI.<Endpoint>.fetch()` will always retrieve a resource via the API, updating any cached resources in the process.
 
 #### By ID
 ```js
 // Using .then()
-Client.Pokemon.fetch(25).then(result => console.log(result));
+PokeAPI.Pokemon.fetch(25).then(result => console.log(result));
 
 // Using async/await
-const result = await Client.Pokemon.fetch(25);
+const result = await PokeAPI.Pokemon.fetch(25);
 ```
 
 #### By Name
 ```js
 // Using.then()
-Client.Pokemon.fetch("pikachu").then(result => console.log(result));
+PokeAPI.Pokemon.fetch("pikachu").then(result => console.log(result));
 
 // Using async/await
-const result = await Client.Pokemon.fetch("pikachu");
+const result = await PokeAPI.Pokemon.fetch("pikachu");
 ```
 
 ### .get()
 
-`Client.<Endpoint>.get()` will always retrieve a cached resource, returning null if one could not be found. `.get()` is synchronous and does not return a Promise.
+`PokeAPI.<Endpoint>.get()` will always retrieve a cached resource, returning null if one could not be found. `.get()` is synchronous and does not return a Promise.
 
 #### By ID
 ```js
-const result = Client.Pokemon.get(25);
+const result = PokeAPI.Pokemon.get(25);
 ```
 
 #### By Name
 ```js
-const result = Client.Pokemon.get("pikachu");
+const result = PokeAPI.Pokemon.get("pikachu");
 ```
 
 ### .list()
 
-`Client.<Endpoint>.list()` retrieves the [ApiResourceList](https://pokeapi.co/docs/v2.html#un-named) or [NamedApiResourceList](https://pokeapi.co/docs/v2.html#named) for an endpoint.
+`PokeAPI.<Endpoint>.list()` retrieves the [ApiResourceList](https://pokeapi.co/docs/v2.html#un-named) or [NamedApiResourceList](https://pokeapi.co/docs/v2.html#named) for an endpoint.
 
 `list()` accepts two parameters for pagination
  - `limit` - Number of results to list. Default 20
@@ -94,7 +92,7 @@ const result = Client.Pokemon.get("pikachu");
 
 ```js
 // Fetch 1000 Pokemon (all) in a NamedApiResourceList
-const resourceList = await Client.Pokemon.list(1000, 0);
+const resourceList = await PokeAPI.Pokemon.list(1000, 0);
 ```
 `resourceList.results` will contain an array of `ApiResource` or `NamedApiResource` objects depending on the type of list.
 

@@ -98,68 +98,68 @@ export * from "./interfaces/Pokemon/Stat";
 export * from "./interfaces/Pokemon/Type";
 export * from "./interfaces/Utility/Language";
 export * from "./interfaces/Utility/CommonModels";
+export * from "./interfaces/Utility/ApiResourceList";
+export * from "./interfaces/Utility/NamedApiResourceList";
 
 class PokeAPI {
-    public Berry = new NamedEndpoint<IBerry>("berry");
-    public BerryFirmness = new NamedEndpoint<IBerryFirmness>("berry-firmness");
-    public BerryFlavor = new NamedEndpoint<IBerryFlavor>("berry-flavor");
+    public static Berry = new NamedEndpoint<IBerry>("berry");
+    public static BerryFirmness = new NamedEndpoint<IBerryFirmness>("berry-firmness");
+    public static BerryFlavor = new NamedEndpoint<IBerryFlavor>("berry-flavor");
 
-    public ContestType = new NamedEndpoint<IContestType>("contest-type");
-    public ContestEffect = new Endpoint<IContestEffect>("contest-effect");
-    public SuperContestEffect = new Endpoint<ISuperContestEffect>("super-contest-effect");
+    public static ContestType = new NamedEndpoint<IContestType>("contest-type");
+    public static ContestEffect = new Endpoint<IContestEffect>("contest-effect");
+    public static SuperContestEffect = new Endpoint<ISuperContestEffect>("super-contest-effect");
 
-    public EncounterMethod = new NamedEndpoint<IEncounterMethod>("encounter-method");
-    public EncounterCondition = new NamedEndpoint<IEncounterCondition>("encounter-condition");
-    public EncounterConditionValue = new NamedEndpoint<IEncounterConditionValue>("encounter-condition-value");
+    public static EncounterMethod = new NamedEndpoint<IEncounterMethod>("encounter-method");
+    public static EncounterCondition = new NamedEndpoint<IEncounterCondition>("encounter-condition");
+    public static EncounterConditionValue = new NamedEndpoint<IEncounterConditionValue>("encounter-condition-value");
 
-    public EvolutionChain = new Endpoint<IEvolutionChain>("evolution-chain");
-    public EvolutionTrigger = new NamedEndpoint<IEvolutionTrigger>("evolution-trigger");
+    public static EvolutionChain = new Endpoint<IEvolutionChain>("evolution-chain");
+    public static EvolutionTrigger = new NamedEndpoint<IEvolutionTrigger>("evolution-trigger");
 
-    public Generaition = new NamedEndpoint<IGeneration>("generation");
-    public Pokedex = new NamedEndpoint<IPokedex>("pokedex");
-    public Version = new NamedEndpoint<IVersion>("version");
-    public VerionGroup = new NamedEndpoint<IVersionGroup>("version-group");
+    public static Generaition = new NamedEndpoint<IGeneration>("generation");
+    public static Pokedex = new NamedEndpoint<IPokedex>("pokedex");
+    public static Version = new NamedEndpoint<IVersion>("version");
+    public static VerionGroup = new NamedEndpoint<IVersionGroup>("version-group");
 
-    public Item = new NamedEndpoint<IItem>("item");
-    public ItemAttribute = new NamedEndpoint<IItemAttribute>("item-attribute");
-    public ItemCategory = new NamedEndpoint<IItemCategory>("item-category");
-    public ItemFlingEffect = new NamedEndpoint<IItemFlingEffect>("item-fling-effect");
-    public ItemPocket = new NamedEndpoint<IItemPocket>("item-pocket");
+    public static Item = new NamedEndpoint<IItem>("item");
+    public static ItemAttribute = new NamedEndpoint<IItemAttribute>("item-attribute");
+    public static ItemCategory = new NamedEndpoint<IItemCategory>("item-category");
+    public static ItemFlingEffect = new NamedEndpoint<IItemFlingEffect>("item-fling-effect");
+    public static ItemPocket = new NamedEndpoint<IItemPocket>("item-pocket");
 
-    public Location = new NamedEndpoint<ILocation>("location");
-    public LocationArea = new NamedEndpoint<ILocationArea>("location-area");
-    public PalParkArea = new NamedEndpoint<IPalParkArea>("pal-park-area");
-    public Region = new NamedEndpoint<IRegion>("region");
+    public static Location = new NamedEndpoint<ILocation>("location");
+    public static LocationArea = new NamedEndpoint<ILocationArea>("location-area");
+    public static PalParkArea = new NamedEndpoint<IPalParkArea>("pal-park-area");
+    public static Region = new NamedEndpoint<IRegion>("region");
 
-    public Machine = new Endpoint<IMachine>("machine");
+    public static Machine = new Endpoint<IMachine>("machine");
 
-    public Move = new NamedEndpoint<IMove>("move");
-    public MoveAilment = new NamedEndpoint<IMoveAilment>("move-ailment");
-    public MoveBattleStyle = new NamedEndpoint<IMoveBattleStyle>("move-battle-style");
-    public MoveCategory = new NamedEndpoint<IMoveCategory>("move-category");
-    public MoveDamageClass = new NamedEndpoint<IMoveDamageClass>("move-damage-class");
-    public MoveLearnMethod = new NamedEndpoint<IMoveLearnMethod>("move-learn-method");
-    public MoveTarget = new NamedEndpoint<IMoveTarget>("move-target");
+    public static Move = new NamedEndpoint<IMove>("move");
+    public static MoveAilment = new NamedEndpoint<IMoveAilment>("move-ailment");
+    public static MoveBattleStyle = new NamedEndpoint<IMoveBattleStyle>("move-battle-style");
+    public static MoveCategory = new NamedEndpoint<IMoveCategory>("move-category");
+    public static MoveDamageClass = new NamedEndpoint<IMoveDamageClass>("move-damage-class");
+    public static MoveLearnMethod = new NamedEndpoint<IMoveLearnMethod>("move-learn-method");
+    public static MoveTarget = new NamedEndpoint<IMoveTarget>("move-target");
 
-    public Ability = new NamedEndpoint<IAbility>("ability");
-    public Characteristic = new Endpoint<ICharacteristic>("characteristic");
-    public EggGroup = new NamedEndpoint<IEggGroup>("egg-group");
-    public Gender = new NamedEndpoint<IGender>("gender");
-    public GrowthRate = new NamedEndpoint<IGrowthRate>("growth-rate");
-    public Nature = new NamedEndpoint<INature>("nature");
-    public PokeathlonStat = new NamedEndpoint<IPokeathlonStat>("pokeathlon-stat");
-    public Pokemon = new NamedEndpoint<IPokemon>("pokemon");
-    public PokemonColor = new NamedEndpoint<IPokemonColor>("pokemon-color");
-    public PokemonForm = new NamedEndpoint<IPokemonForm>("pokemon-form");
-    public PokemonHabitat = new NamedEndpoint<IPokemonHabitat>("pokemon-habitat");
-    public PokemonShape = new NamedEndpoint<IPokemonShape>("pokemon-shape");
-    public PokemonSpecies = new NamedEndpoint<IPokemonSpecies>("pokemon-species");
-    public Stat = new NamedEndpoint<IStat>("stat");
-    public Type = new NamedEndpoint<IType>("type");
+    public static Ability = new NamedEndpoint<IAbility>("ability");
+    public static Characteristic = new Endpoint<ICharacteristic>("characteristic");
+    public static EggGroup = new NamedEndpoint<IEggGroup>("egg-group");
+    public static Gender = new NamedEndpoint<IGender>("gender");
+    public static GrowthRate = new NamedEndpoint<IGrowthRate>("growth-rate");
+    public static Nature = new NamedEndpoint<INature>("nature");
+    public static PokeathlonStat = new NamedEndpoint<IPokeathlonStat>("pokeathlon-stat");
+    public static Pokemon = new NamedEndpoint<IPokemon>("pokemon");
+    public static PokemonColor = new NamedEndpoint<IPokemonColor>("pokemon-color");
+    public static PokemonForm = new NamedEndpoint<IPokemonForm>("pokemon-form");
+    public static PokemonHabitat = new NamedEndpoint<IPokemonHabitat>("pokemon-habitat");
+    public static PokemonShape = new NamedEndpoint<IPokemonShape>("pokemon-shape");
+    public static PokemonSpecies = new NamedEndpoint<IPokemonSpecies>("pokemon-species");
+    public static Stat = new NamedEndpoint<IStat>("stat");
+    public static Type = new NamedEndpoint<IType>("type");
 
-    public Language = new NamedEndpoint<ILanguage>("language");
-
-    constructor() { }
+    public static Language = new NamedEndpoint<ILanguage>("language");
 }
 
 module.exports = PokeAPI;

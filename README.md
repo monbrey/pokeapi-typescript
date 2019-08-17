@@ -84,7 +84,7 @@ const result = PokeAPI.Pokemon.get("pikachu");
 
 ### .list()
 
-`PokeAPI.<Endpoint>.list()` retrieves the [ApiResourceList](https://pokeapi.co/docs/v2.html#un-named) or [NamedApiResourceList](https://pokeapi.co/docs/v2.html#named) for an endpoint.
+`PokeAPI.<Endpoint>.list()` retrieves the [IApiResourceList](https://pokeapi.co/docs/v2.html#un-named) or [INamedApiResourceList](https://pokeapi.co/docs/v2.html#named) for an endpoint.
 
 `list()` accepts two parameters for pagination
  - `limit` - Number of results to list. Default 20
@@ -94,13 +94,14 @@ const result = PokeAPI.Pokemon.get("pikachu");
 // Fetch 1000 Pokemon (all) in a NamedApiResourceList
 const resourceList = await PokeAPI.Pokemon.list(1000, 0);
 ```
-`resourceList.results` will contain an array of `ApiResource` or `NamedApiResource` objects depending on the type of list.
+`resourceList.results` will contain an array of `IApiResource` or `INamedApiResource` objects depending on the type of list.
 
-An individual `ApiResource` can then be fetched, caching the resource by default.
+### .listAll()
 
+`PokeAPI.<Endpoint>.listAll()` functions like the above, but will return the complete list for an endpoint. This is done by making two API calls.
 ```js
-const pikaResource = resourceList.find(r => r.name === "pikachu");
-const pikachu = await pikaResource.fetch();
+// Fetch 1000 Pokemon (all) in a NamedApiResourceList
+const completeResourceList = await PokeAPI.Pokemon.listAll();
 ```
 
 ## Endpoint List

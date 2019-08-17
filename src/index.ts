@@ -116,6 +116,8 @@ module.exports = PokeAPI;
 
 export * from "./classes/Endpoint";
 export * from "./classes/NamedEndpoint";
+export * from "./classes/ApiResource";
+export * from "./classes/NamedApiResource";
 export * from "./classes/ApiResourceList";
 export * from "./classes/NamedApiResourceList";
 export * from "./interfaces/Berries/Berry";

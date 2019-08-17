@@ -4,11 +4,9 @@ import { IGeneration } from "../Games/Generation";
 import { IVersion } from "../Games/Version";
 import { IVersionGroup } from "../Games/VersionGroup";
 import { IMachine } from "../Machines/Machine";
+import { IApiResource } from "./ApiResourceList";
 import { ILanguage } from "./Language";
-
-export interface IApiResource<T> {
-    url: string;
-}
+import { INamedApiResource } from "./NamedApiResourceList";
 
 export interface ICacheableResource {
     id: number;
@@ -52,11 +50,6 @@ export interface IMachineVersionDetail {
 export interface IName {
     name: string;
     language: INamedApiResource<ILanguage>;
-}
-
-export interface INamedApiResource<T> {
-    name: string;
-    url: string;
 }
 
 export interface IVerboseEffect {

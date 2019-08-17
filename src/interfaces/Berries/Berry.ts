@@ -1,6 +1,6 @@
 import { IItem } from "../Items/Item";
 import { IType } from "../Pokemon/Type";
-import { INamedApiResource } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IBerryFirmness } from "./BerryFirmness";
 import { IBerryFlavor } from "./BerryFlavor";
 
@@ -22,4 +22,19 @@ export interface IBerry {
 export interface IBerryFlavorMap {
     potency: number;
     flavor: INamedApiResource<IBerryFlavor>;
+}
+
+export class Berry implements IBerry {
+    public id: number;
+    public name: string;
+    public growth_time: number;
+    public max_harvest: number;
+    public natural_gift_power: number;
+    public size: number;
+    public smoothness: number;
+    public soil_dryness: number;
+    public firmness: INamedApiResource<IBerryFirmness>;
+    public flavors: IBerryFlavorMap[];
+    public item: INamedApiResource<IItem>;
+    public natural_gift_type: INamedApiResource<IType>;
 }

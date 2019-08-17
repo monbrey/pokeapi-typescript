@@ -1,4 +1,5 @@
-import { IName, INamedApiResource } from "../Utility/CommonModels";
+import { IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { INature } from "./Nature";
 
 export interface IPokeathlonStat {

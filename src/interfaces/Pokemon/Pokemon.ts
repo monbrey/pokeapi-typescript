@@ -4,7 +4,8 @@ import { IItem } from "../Items/Item";
 import { ILocation } from "../Locations/Location";
 import { IMove } from "../Moves/Move";
 import { IMoveLearnMethod } from "../Moves/MoveLearnMethod";
-import { INamedApiResource, IVersionEncounterDetail, IVersionGameIndex } from "../Utility/CommonModels";
+import { IVersionEncounterDetail, IVersionGameIndex } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IAbility } from "./Ability";
 import { IPokemonForm } from "./PokemonForm";
 import { IPokemonSpecies } from "./PokemonSpecies";
@@ -20,7 +21,7 @@ export interface IPokemon {
     order: number;
     weight: number;
     abilities: IPokemonAbility[];
-    forms: INamedApiResource<IPokemonForm>;
+    forms: Array<INamedApiResource<IPokemonForm>>;
     game_indices: IVersionGameIndex[];
     held_items: IPokemonHeldItem[];
     location_area_encounters: string;

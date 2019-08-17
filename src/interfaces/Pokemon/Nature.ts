@@ -1,6 +1,7 @@
 import { IBerryFlavor } from "../Berries/BerryFlavor";
 import { IMoveBattleStyle } from "../Moves/MoveBattleStyle";
-import { IName, INamedApiResource } from "../Utility/CommonModels";
+import { IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IPokeathlonStat } from "./PokeathlonStat";
 import { IStat } from "./Stat";
 

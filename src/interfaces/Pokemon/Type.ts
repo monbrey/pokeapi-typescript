@@ -1,7 +1,8 @@
 import { IGeneration } from "../Games/Generation";
 import { IMove } from "../Moves/Move";
 import { IMoveDamageClass } from "../Moves/MoveDamageClass";
-import { IGenerationGameIndex, IName, INamedApiResource } from "../Utility/CommonModels";
+import { IGenerationGameIndex, IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IPokemon } from "./Pokemon";
 
 export interface IType {
@@ -22,10 +23,10 @@ export interface ITypePokemon {
 }
 
 export interface ITypeRelations {
-    no_damage_to: INamedApiResource<IType>;
-    half_damage_to: INamedApiResource<IType>;
-    double_damage_to: INamedApiResource<IType>;
-    no_damage_from: INamedApiResource<IType>;
-    half_damage_from: INamedApiResource<IType>;
-    double_damage_from: INamedApiResource<IType>;
+    no_damage_to: Array<INamedApiResource<IType>>;
+    half_damage_to: Array<INamedApiResource<IType>>;
+    double_damage_to: Array<INamedApiResource<IType>>;
+    no_damage_from: Array<INamedApiResource<IType>>;
+    half_damage_from: Array<INamedApiResource<IType>>;
+    double_damage_from: Array<INamedApiResource<IType>>;
 }

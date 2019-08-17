@@ -1,5 +1,6 @@
 import { IContestType } from "../Contests/ContestType";
-import { IName, INamedApiResource } from "../Utility/CommonModels";
+import { IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IBerry } from "./Berry";
 
 export interface IBerryFlavor {

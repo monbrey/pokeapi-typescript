@@ -3,7 +3,8 @@ import { IMove } from "../Moves/Move";
 import { IAbility } from "../Pokemon/Ability";
 import { IPokemonSpecies } from "../Pokemon/PokemonSpecies";
 import { IType } from "../Pokemon/Type";
-import { IName, INamedApiResource } from "../Utility/CommonModels";
+import { IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IVersionGroup } from "./VersionGroup";
 
 export interface IGeneration {

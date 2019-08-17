@@ -1,5 +1,6 @@
 import { IMove } from "../Moves/Move";
-import { IFlavorText, INamedApiResource } from "../Utility/CommonModels";
+import { IFlavorText } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 
 export interface ISuperContestEffect {
     id: number;

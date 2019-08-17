@@ -1,6 +1,7 @@
 import { IRegion } from "../Locations/Region";
 import { IPokemonSpecies } from "../Pokemon/PokemonSpecies";
-import { IDescription, IName, INamedApiResource } from "../Utility/CommonModels";
+import { IDescription, IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IVersionGroup } from "./VersionGroup";
 
 export interface IPokedex {

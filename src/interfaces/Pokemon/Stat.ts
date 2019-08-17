@@ -1,6 +1,8 @@
 import { IMove } from "../Moves/Move";
 import { IMoveDamageClass } from "../Moves/MoveDamageClass";
-import { IApiResource, IName, INamedApiResource } from "../Utility/CommonModels";
+import { IApiResource } from "../Utility/ApiResourceList";
+import { IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { ICharacteristic } from "./Characteristic";
 import { INature } from "./Nature";
 

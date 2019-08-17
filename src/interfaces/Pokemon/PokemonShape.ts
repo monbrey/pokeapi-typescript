@@ -1,5 +1,6 @@
-import { IName, INamedApiResource } from "../Utility/CommonModels";
+import { IName } from "../Utility/CommonModels";
 import { ILanguage } from "../Utility/Language";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IPokemonSpecies } from "./PokemonSpecies";
 
 export interface IPokemonShape {

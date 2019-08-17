@@ -1,5 +1,6 @@
 import { IVersionGroup } from "../Games/VersionGroup";
-import { IDescription, IName, INamedApiResource } from "../Utility/CommonModels";
+import { IDescription, IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 
 export interface IMoveLearnMethod {
     id: number;

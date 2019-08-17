@@ -3,7 +3,7 @@ import { ILocation } from "../Locations/Location";
 import { IMove } from "../Moves/Move";
 import { IPokemonSpecies } from "../Pokemon/PokemonSpecies";
 import { IType } from "../Pokemon/Type";
-import { INamedApiResource } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IEvolutionTrigger } from "./EvolutionTrigger";
 
 export interface IEvolutionChain {

@@ -1,4 +1,5 @@
-import { IGenerationGameIndex, IName, INamedApiResource } from "../Utility/CommonModels";
+import { IGenerationGameIndex, IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { ILocationArea } from "./LocationArea";
 import { IRegion } from "./Region";
 

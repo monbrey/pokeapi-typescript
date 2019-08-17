@@ -1,7 +1,8 @@
 import { IGeneration } from "../Games/Generation";
 import { IPokedex } from "../Games/Pokedex";
 import { IVersionGroup } from "../Games/VersionGroup";
-import { IName, INamedApiResource } from "../Utility/CommonModels";
+import { IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { ILocation } from "./Location";
 
 export interface IRegion {

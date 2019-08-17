@@ -1,5 +1,6 @@
 import { IVersionGroup } from "../Games/VersionGroup";
-import { IName, INamedApiResource } from "../Utility/CommonModels";
+import { IName } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IPokemon } from "./Pokemon";
 
 export interface IPokemonForm {

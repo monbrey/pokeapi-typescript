@@ -1,7 +1,8 @@
 import { IGeneration } from "../Games/Generation";
 import { IVersionGroup } from "../Games/VersionGroup";
-import { IEffect, IName, INamedApiResource, IVerboseEffect } from "../Utility/CommonModels";
+import { IEffect, IName, IVerboseEffect } from "../Utility/CommonModels";
 import { ILanguage } from "../Utility/Language";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IPokemon } from "./Pokemon";
 
 export interface IAbility {

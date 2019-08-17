@@ -1,4 +1,5 @@
-import { IEffect, INamedApiResource } from "../Utility/CommonModels";
+import { IEffect } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IItem } from "./Item";
 
 export interface IItemFlingEffect {

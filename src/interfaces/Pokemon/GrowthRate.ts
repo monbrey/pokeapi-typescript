@@ -1,4 +1,5 @@
-import { IDescription, INamedApiResource } from "../Utility/CommonModels";
+import { IDescription} from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IPokemonSpecies } from "./PokemonSpecies";
 
 export interface IGrowthRate {

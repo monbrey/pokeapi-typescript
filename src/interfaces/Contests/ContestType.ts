@@ -1,6 +1,6 @@
 import { IBerryFlavor } from "../Berries/BerryFlavor";
-import { INamedApiResource } from "../Utility/CommonModels";
 import { ILanguage } from "../Utility/Language";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 
 export interface IContestType {
     id: number;

@@ -1,6 +1,6 @@
 import { IRegion } from "../Locations/Region";
 import { IMoveLearnMethod } from "../Moves/MoveLearnMethod";
-import { INamedApiResource } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { IGeneration } from "./Generation";
 import { IPokedex } from "./Pokedex";
 import { IVersion } from "./Version";

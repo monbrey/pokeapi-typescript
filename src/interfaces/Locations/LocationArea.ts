@@ -1,7 +1,8 @@
 import { IEncounterMethod } from "../Encounters/EncounterMethod";
 import { IVersion } from "../Games/Version";
 import { IPokemon } from "../Pokemon/Pokemon";
-import { IName, INamedApiResource, IVersionEncounterDetail } from "../Utility/CommonModels";
+import { IName, IVersionEncounterDetail } from "../Utility/CommonModels";
+import { INamedApiResource } from "../Utility/NamedApiResourceList";
 import { ILocation } from "./Location";
 
 export interface ILocationArea {

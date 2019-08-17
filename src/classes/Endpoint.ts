@@ -2,18 +2,17 @@ import Collection = require("collection");
 import fetch from "node-fetch";
 import { URLSearchParams } from "url";
 import nonenumerable from "../decorators/enumerable";
-import { IApiResourceList } from "../interfaces/Utility/ResourceList";
-import { ApiResourceList } from "./ApiResourceList";
+import { IApiResourceList } from "../interfaces/Utility/ApiResourceList";
 
-export type EndpointParam = number;
+type EndpointParam = number;
 
 const BASE_URI = "https://pokeapi.co/api/v2";
 
-export class Endpoint<T> {
+class Endpoint<T> {
     @nonenumerable
     protected resource: string;
     @nonenumerable
-    protected _list: ApiResourceList<T>;
+    protected _list: IApiResourceList<T>;
     protected cache: Collection<number, T>;
 
     constructor(resource) {
@@ -57,16 +56,15 @@ export class Endpoint<T> {
      * @param {offset} [offset=0]
      * @returns {Promise<NamedApiResourceList<T>>}
      */
-    public async list(limit: number = 20, offset: number = 0): Promise<ApiResourceList<T>> {
+    public async list(limit: number = 20, offset: number = 0): Promise<IApiResourceList<T>> {
         if (this._list) {
             const results = this._list.results.slice(offset, limit);
             const { count, next, previous } = this._list;
-            return new ApiResourceList<T>({ count, next, previous, results }, this);
+            return { count, next, previous, results };
         }
 
         const params = new URLSearchParams({ limit: `${limit}`, offset: `${offset}` });
-        const list = await fetch(`${BASE_URI}/${this.resource}?${params}`).then(res => res.json());
-        return new ApiResourceList<T>(list, this);
+        return fetch(`${BASE_URI}/${this.resource}?${params}`).then(res => res.json());
     }
 
     /**
@@ -75,18 +73,19 @@ export class Endpoint<T> {
      * @param {boolean} [cache=true] - If the result should be cahced in-memory
      * @returns {Promise<NamedApiResourceList<T>>}
      */
-    public async listAll(cache: boolean = true): Promise<ApiResourceList<T>> {
+    public async listAll(cache: boolean = true): Promise<IApiResourceList<T>> {
         if (this._list) { return this._list; }
 
         const { count } = await fetch(`${BASE_URI}/${this.resource}?limit=1`).then(res => res.json());
         const data = await fetch(`${BASE_URI}/${this.resource}?limit=${count}`).then(res => res.json());
-        const list = new ApiResourceList<T>(data, this);
-        if (cache) { this._list = list; }
+        if (cache) { this._list = data; }
 
-        return list;
+        return data;
     }
 
     public _cache(data) {
         this.cache.set(data.id, data);
     }
 }
+
+export { Endpoint, EndpointParam };

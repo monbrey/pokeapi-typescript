@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import fetch from "cross-fetch";
 import { URLSearchParams } from "url";
 import nonenumerable from "../decorators/enumerable";
 import { INamedApiResourceList } from "../interfaces/Utility/NamedApiResourceList";

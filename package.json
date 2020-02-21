@@ -33,7 +33,7 @@
   "homepage": "https://github.com/Monbrey/pokeapi-typescript#readme",
   "dependencies": {
     "@discordjs/collection": "^0.1.4",
-    "node-fetch": "^2.6.0"
+    "cross-fetch": "^3.0.4"
   },
   "devDependencies": {
     "@types/node": "^12.7.0",

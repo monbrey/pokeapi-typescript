@@ -1,5 +1,5 @@
 import Collection from "@discordjs/collection";
-import fetch from "node-fetch";
+import fetch from "cross-fetch";
 import { URLSearchParams } from "url";
 import nonenumerable from "../decorators/enumerable";
 import { IApiResourceList } from "../interfaces/Utility/ApiResourceList";

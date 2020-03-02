@@ -1,5 +1,5 @@
+import URLSearchParams from "@ungap/url-search-params";
 import fetch from "cross-fetch";
-import { URLSearchParams } from "url";
 import nonenumerable from "../decorators/enumerable";
 import { INamedApiResourceList } from "../interfaces/Utility/NamedApiResourceList";
 import { Endpoint, EndpointParam } from "./Endpoint";

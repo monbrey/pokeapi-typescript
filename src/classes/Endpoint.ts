@@ -1,4 +1,4 @@
-import Collection = require("collection");
+import Collection from "@discordjs/collection"
 import fetch from "node-fetch";
 import { URLSearchParams } from "url";
 import nonenumerable from "../decorators/enumerable";

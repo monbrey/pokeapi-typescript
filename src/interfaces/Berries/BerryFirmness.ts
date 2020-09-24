@@ -1,6 +1,6 @@
 import { IName } from "../Utility/CommonModels";
 import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IBerry } from "./berry";
+import { IBerry } from "./Berry";
 
 export interface IBerryFirmness {
     id: number;

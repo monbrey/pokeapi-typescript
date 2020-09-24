@@ -1,6 +1,6 @@
-import Collection = require("collection");
-import fetch from "node-fetch";
-import { URLSearchParams } from "url";
+import Collection from "@discordjs/collection";
+import URLSearchParams from "@ungap/url-search-params";
+import fetch from "cross-fetch";
 import nonenumerable from "../decorators/enumerable";
 import { IApiResourceList } from "../interfaces/Utility/ApiResourceList";
 

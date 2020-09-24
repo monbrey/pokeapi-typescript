@@ -32,8 +32,9 @@
   },
   "homepage": "https://github.com/Monbrey/pokeapi-typescript#readme",
   "dependencies": {
-    "collection": "github:discordjs/collection",
-    "node-fetch": "^2.6.0"
+    "@discordjs/collection": "^0.1.4",
+    "@ungap/url-search-params": "^0.1.4",
+    "cross-fetch": "^3.0.4"
   },
   "devDependencies": {
     "@types/node": "^12.7.0",

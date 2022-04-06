@@ -97,65 +97,123 @@ interface ISpriteVariant {
 }
 
 export interface IPokemonSpriteOther {
-    dream_world: Pick<ISpriteVariant, 'front_default' | 'front_female'>;
-    'official-artwork': {
+    dream_world: Pick<ISpriteVariant, "front_default" | "front_female">;
+    "official-artwork": {
         front_default: string;
-    }
+    };
 }
 
 interface IGeneration1Sprite {
-    'red-blue': Pick<ISpriteVariant, 'back_default' | 'back_gray' | 'front_default' | 'front_gray'>;
-    yellow: Pick<ISpriteVariant, 'back_default' | 'back_gray' | 'front_default' | 'front_gray'>;
-};
+    "red-blue": Pick<ISpriteVariant, "back_default" | "back_gray" | "front_default" | "front_gray">;
+    yellow: Pick<ISpriteVariant, "back_default" | "back_gray" | "front_default" | "front_gray">;
+}
 
 interface IGeneration2Sprite {
-    crystal: Pick<ISpriteVariant, 'back_default' | 'back_shiny' | 'front_default' | 'front_shiny'>;
-    gold: Pick<ISpriteVariant, 'back_default' | 'back_shiny' | 'front_default' | 'front_shiny'>;
-    silver: Pick<ISpriteVariant, 'back_default' | 'back_shiny' | 'front_default' | 'front_shiny'>;
-};
+    crystal: Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+    gold: Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+    silver: Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+}
 
 interface IGeneration3Sprite {
-    emerald: Pick<ISpriteVariant, 'front_default' | 'front_shiny'>;
-    'firered-leafgreen': Pick<ISpriteVariant, 'back_default' | 'back_shiny' | 'front_default' | 'front_shiny'>;
-    'ruby-sapphire': Pick<ISpriteVariant, 'back_default' | 'back_shiny' | 'front_default' | 'front_shiny'>;
-};
+    emerald: Pick<ISpriteVariant, "front_default" | "front_shiny">;
+    "firered-leafgreen": Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+    "ruby-sapphire": Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+}
 
 interface IGeneration4Sprite {
-    'diamond-pearl': Pick<ISpriteVariant, 'back_default' | 'back_female' | 'back_shiny' | 'back_shiny_female' | 'front_default' | 'front_female' | 'front_shiny' | 'front_shiny_female'>;
-    'heartgold-soulsilver': Pick<ISpriteVariant, 'back_default' | 'back_female' | 'back_shiny' | 'back_shiny_female' | 'front_default' | 'front_female' | 'front_shiny' | 'front_shiny_female'>;
-    platinum: Pick<ISpriteVariant, 'back_default' | 'back_female' | 'back_shiny' | 'back_shiny_female' | 'front_default' | 'front_female' | 'front_shiny' | 'front_shiny_female'>;
-};
+    "diamond-pearl": Pick<
+        ISpriteVariant,
+        "back_default" |
+        "back_female" |
+        "back_shiny" |
+        "back_shiny_female" |
+        "front_default" |
+        "front_female" |
+        "front_shiny" |
+        "front_shiny_female"
+    >;
+    "heartgold-soulsilver": Pick<
+        ISpriteVariant,
+        "back_default" |
+        "back_female" |
+        "back_shiny" |
+        "back_shiny_female" |
+        "front_default" |
+        "front_female" |
+        "front_shiny" |
+        "front_shiny_female"
+    >;
+    platinum: Pick<
+        ISpriteVariant,
+        "back_default" |
+        "back_female" |
+        "back_shiny" |
+        "back_shiny_female" |
+        "front_default" |
+        "front_female" |
+        "front_shiny" |
+        "front_shiny_female"
+    >;
+}
 
-type IBlackWhiteSprite = Pick<ISpriteVariant, 'back_default' | 'back_female' | 'back_shiny' | 'back_shiny_female' | 'front_default' | 'front_female' | 'front_shiny' | 'front_shiny_female'>;
+type IBlackWhiteSprite = Pick<
+    ISpriteVariant,
+    "back_default" |
+    "back_female" |
+    "back_shiny" |
+    "back_shiny_female" |
+    "front_default" |
+    "front_female" |
+    "front_shiny" |
+    "front_shiny_female"
+>;
 
 interface IGeneration5Sprite {
-    'black-white': IBlackWhiteSprite & { animated: IBlackWhiteSprite }
-};
+    "black-white": IBlackWhiteSprite & { animated: IBlackWhiteSprite };
+}
 
 interface IGeneration6Sprite {
-    'omegaruby-alphasapphire': Pick<ISpriteVariant, 'front_default' | 'front_female' | 'front_shiny' | 'front_shiny_female'>;
-    'x-y': Pick<ISpriteVariant, 'front_default' | 'front_female' | 'front_shiny' | 'front_shiny_female'>;
-};
+    "omegaruby-alphasapphire": Pick<
+        ISpriteVariant,
+        "front_default" |
+        "front_female" |
+        "front_shiny" |
+        "front_shiny_female"
+    >;
+    "x-y": Pick<
+        ISpriteVariant,
+        "front_default" |
+        "front_female" |
+        "front_shiny" |
+        "front_shiny_female"
+    >;
+}
 
 interface IGeneration7Sprite {
-    icons: Pick<ISpriteVariant, 'front_default' | 'front_female'>;
-    'ultra-sun-ultra-moon': Pick<ISpriteVariant, 'front_default' | 'front_female' | 'front_shiny' | 'front_shiny_female'>;
-};
+    icons: Pick<ISpriteVariant, "front_default" | "front_female">;
+    "ultra-sun-ultra-moon": Pick<
+        ISpriteVariant,
+        "front_default" |
+        "front_female" |
+        "front_shiny" |
+        "front_shiny_female"
+    >;
+}
 
 interface IGeneration8Sprite {
-    icons: Pick<ISpriteVariant, 'front_default' | 'front_female'>;
-};
+    icons: Pick<ISpriteVariant, "front_default" | "front_female">;
+}
 
 interface IPokemonSpriteVersion {
-    'generation-i': IGeneration1Sprite;
-    'generation-ii': IGeneration2Sprite;
-    'generation-iii': IGeneration3Sprite;
-    'generation-iv': IGeneration4Sprite;
-    'generation-v': IGeneration5Sprite;
-    'generation-vi': IGeneration6Sprite;
-    'generation-vii': IGeneration7Sprite;
-    'generation-viii': IGeneration8Sprite;
-};
+    "generation-i": IGeneration1Sprite;
+    "generation-ii": IGeneration2Sprite;
+    "generation-iii": IGeneration3Sprite;
+    "generation-iv": IGeneration4Sprite;
+    "generation-v": IGeneration5Sprite;
+    "generation-vi": IGeneration6Sprite;
+    "generation-vii": IGeneration7Sprite;
+    "generation-viii": IGeneration8Sprite;
+}
 
 export interface ILocationAreaEncounter {
     location_area: INamedApiResource<ILocation>;

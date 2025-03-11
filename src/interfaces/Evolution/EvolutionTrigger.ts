@@ -6,5 +6,5 @@ export interface EvolutionTrigger {
     id: number;
     name: string;
     names: Name[];
-    pokemon_species: Array<NamedApiResource<PokemonSpecies>>;
+    pokemon_species: ;
 }

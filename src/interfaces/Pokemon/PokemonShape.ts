@@ -8,7 +8,7 @@ export interface PokemonShape {
     name: string;
     awesome_names: AwesomeName[];
     names: Name[];
-    pokemons_species: Array<NamedApiResource<PokemonSpecies>>;
+    pokemons_species: ;
 }
 
 export interface AwesomeName {

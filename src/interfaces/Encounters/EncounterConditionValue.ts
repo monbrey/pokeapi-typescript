@@ -5,6 +5,6 @@ import { EncounterCondition } from "./EncounterCondition";
 export interface EncounterConditionValue {
     id: number;
     name: string;
-    condition: Array<NamedApiResource<EncounterCondition>>;
+    condition: ;
     names: Name[];
 }

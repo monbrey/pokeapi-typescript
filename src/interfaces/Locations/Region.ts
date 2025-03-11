@@ -7,10 +7,10 @@ import { Location } from "./Location";
 
 export interface Region {
     id: number;
-    locations: Array<NamedApiResource<Location>>;
+    locations: ;
     name: string;
     names: Name[];
     main_generation: NamedApiResource<Generation>;
-    pokedexes: Array<NamedApiResource<Pokedex>>;
-    version_groups: Array<NamedApiResource<VersionGroup>>;
+    pokedexes: ;
+    version_groups: ;
 }

@@ -9,5 +9,5 @@ export interface Location {
     region: NamedApiResource<Region>;
     names: Name[];
     game_indices: GenerationGameIndex[];
-    areas: Array<NamedApiResource<LocationArea>>;
+    areas: ;
 }

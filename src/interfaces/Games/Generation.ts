@@ -10,11 +10,11 @@ import { VersionGroup } from "./VersionGroup";
 export interface Generation {
     id: number;
     name: string;
-    abilities: Array<NamedApiResource<Ability>>;
+    abilities: ;
     names: Name[];
     main_region: NamedApiResource<Region>;
-    moves: Array<NamedApiResource<Move>>;
-    pokemon_species: Array<NamedApiResource<PokemonSpecies>>;
-    types: Array<NamedApiResource<Type>>;
-    version_groups: Array<NamedApiResource<VersionGroup>>;
+    moves: ;
+    pokemon_species: ;
+    types: ;
+    version_groups: ;
 }

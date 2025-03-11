@@ -1,3 +1,4 @@
+import { Collection } from "@discordjs/collection";
 import { ApiResourceList, Base } from "../interfaces/Utility/ApiResourceList.js";
 
 type EndpointParam = number;
@@ -7,11 +8,11 @@ const BASE_URI = "https://pokeapi.co/api/v2";
 class Endpoint<T extends Base> {
   protected resource: string;
   protected _list: ApiResourceList<T>;
-  protected cache: Map<number, T>;
+  protected cache: Collection<number, T>;
 
   constructor(resource: string) {
     this.resource = resource;
-    this.cache = new Map<number, T>();
+    this.cache = new Collection<number, T>();
   }
 
   /**

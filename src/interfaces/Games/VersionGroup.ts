@@ -10,8 +10,8 @@ export interface VersionGroup {
     name: string;
     order: number;
     generation: NamedApiResource<Generation>;
-    move_learn_methods: Array<NamedApiResource<MoveLearnMethod>>;
-    pokedexes: Array<NamedApiResource<Pokedex>>;
-    regions: Array<NamedApiResource<Region>>;
-    versions: Array<NamedApiResource<Version>>;
+    move_learn_methods: ;
+    pokedexes: ;
+    regions: ;
+    versions: ;
 }

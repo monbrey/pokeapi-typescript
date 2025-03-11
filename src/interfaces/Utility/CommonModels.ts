@@ -26,7 +26,7 @@ export interface Effect {
 export interface Encounter {
     min_level: number;
     max_level: number;
-    condition_values: Array<NamedApiResource<EncounterConditionValue>>;
+    condition_values: ;
     chance: number;
     method: NamedApiResource<EncounterMethod>;
 }

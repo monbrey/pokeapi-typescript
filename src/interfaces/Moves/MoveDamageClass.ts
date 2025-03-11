@@ -6,6 +6,6 @@ export interface MoveDamageClass {
     id: number;
     name: string;
     descriptions: Description[];
-    moves: Array<NamedApiResource<Move>>;
+    moves: ;
     names: Name[];
 }

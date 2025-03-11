@@ -7,5 +7,5 @@ export interface MoveLearnMethod {
     name: string;
     descriptions: Description[];
     names: Name[];
-    version_groups: Array<NamedApiResource<VersionGroup>>;
+    version_groups: ;
 }

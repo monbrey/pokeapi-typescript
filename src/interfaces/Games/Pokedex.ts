@@ -12,7 +12,7 @@ export interface Pokedex {
     names: Name[];
     pokemon_entries: PokemonEntry[];
     region: NamedApiResource<Region>;
-    version_groups: Array<NamedApiResource<VersionGroup>>;
+    version_groups: ;
 }
 
 export interface PokemonEntry {

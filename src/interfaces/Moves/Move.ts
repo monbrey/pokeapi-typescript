@@ -47,8 +47,8 @@ export interface ContestComboSets {
 }
 
 export interface ContestComboDetail {
-    use_before: Array<NamedApiResource<Move>>;
-    use_after: Array<NamedApiResource<Move>>;
+    use_before: ;
+    use_after: ;
 }
 
 export interface MoveFlavorText {

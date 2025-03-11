@@ -6,6 +6,6 @@ export interface MoveTarget {
     id: number;
     name: string;
     descriptions: Description[];
-    moves: Array<NamedApiResource<Move>>;
+    moves: ;
     names: Name[];
 }

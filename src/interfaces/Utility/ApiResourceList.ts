@@ -17,5 +17,5 @@ export interface ApiResourceList<T extends Base> {
   count: number;
   next: string;
   previous: string;
-  results: Array<ApiResource<T>>;
+  results: ;
 }

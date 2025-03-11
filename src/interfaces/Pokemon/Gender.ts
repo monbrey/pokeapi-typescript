@@ -5,7 +5,7 @@ export interface Gender {
     id: number;
     name: string;
     pokemon_species_details: PokemonSpeciesGender[];
-    required_for_evolution: Array<NamedApiResource<PokemonSpecies>>;
+    required_for_evolution: ;
 }
 
 export interface PokemonSpeciesGender {

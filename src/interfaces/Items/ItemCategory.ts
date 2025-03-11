@@ -6,7 +6,7 @@ import { ItemPocket } from "./ItemPocket";
 export interface ItemCategory {
     id: number;
     name: string;
-    items: Array<NamedApiResource<Item>>;
+    items: ;
     names: Name[];
     pocket: NamedApiResource<ItemPocket>;
 }

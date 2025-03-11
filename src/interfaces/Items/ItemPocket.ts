@@ -4,5 +4,5 @@ import { ItemCategory } from "./ItemCategory";
 export interface ItemPocket {
     id: number;
     name: string;
-    categories: Array<NamedApiResource<ItemCategory>>;
+    categories: ;
 }

@@ -6,5 +6,5 @@ export interface EncounterCondition {
     id: number;
     name: string;
     names: Name[];
-    values: Array<NamedApiResource<EncounterConditionValue>>;
+    values: ;
 }

@@ -23,10 +23,10 @@ export interface TypePokemon {
 }
 
 export interface TypeRelations {
-    no_damage_to: Array<NamedApiResource<Type>>;
-    half_damage_to: Array<NamedApiResource<Type>>;
-    double_damage_to: Array<NamedApiResource<Type>>;
-    no_damage_from: Array<NamedApiResource<Type>>;
-    half_damage_from: Array<NamedApiResource<Type>>;
-    double_damage_from: Array<NamedApiResource<Type>>;
+    no_damage_to: ;
+    half_damage_to: ;
+    double_damage_to: ;
+    no_damage_from: ;
+    half_damage_from: ;
+    double_damage_from: ;
 }

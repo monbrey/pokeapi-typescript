@@ -8,7 +8,7 @@ export interface GrowthRate {
     formula: string;
     descriptions: Description[];
     levels: GrowthRateExperienceLevel[];
-    pokemon_species: Array<NamedApiResource<PokemonSpecies>>;
+    pokemon_species: ;
 }
 
 export interface GrowthRateExperienceLevel {

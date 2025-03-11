@@ -102,7 +102,7 @@ export * from "./interfaces/Utility/CommonModels";
 export * from "./interfaces/Utility/ApiResourceList";
 export * from "./interfaces/Utility/NamedApiResourceList";
 
-class PokeAPI {
+export class PokeAPI {
     public static Berry = new NamedEndpoint<Berry>("berry");
     public static BerryFirmness = new NamedEndpoint<BerryFirmness>("berry-firmness");
     public static BerryFlavor = new NamedEndpoint<BerryFlavor>("berry-flavor");
@@ -173,6 +173,3 @@ class PokeAPI {
         return this[endpoint].resolve(parseInt(id, 10));
     }
 }
-
-module.exports = PokeAPI;
-export default PokeAPI;

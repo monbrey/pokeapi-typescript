@@ -26,7 +26,7 @@ export interface PokemonSpecies {
     forms_switchable: boolean;
     growth_rate: NamedApiResource<GrowthRate>;
     pokedex_numbers: PokemonSpeciesDexEntry[];
-    egg_groups: Array<NamedApiResource<EggGroup>>;
+    egg_groups: ;
     color: NamedApiResource<PokemonColor>;
     shape: NamedApiResource<PokemonShape>;
     evolves_from_species: NamedApiResource<PokemonSpecies>;

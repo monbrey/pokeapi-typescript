@@ -29,6 +29,6 @@ export interface MoveStatAffect {
 }
 
 export interface NatureStatAffectSets {
-    increase: Array<NamedApiResource<Nature>>;
-    decrease: Array<NamedApiResource<Nature>>;
+    increase: ;
+    decrease: ;
 }

@@ -6,18 +6,16 @@ pokeapi-typescript is a fully-typed SDK for the [PokeAPI](https://pokeapi.co) us
 
 ## Installation
 
-Via yarn: `yarn add pokeapi-typescript`
+via yarn: `yarn add pokeapi-typescript`
 
-Via npm: `npm install pokeapi-typescript`
+via npm: `npm install pokeapi-typescript`
 
 ## Getting Started
 
 To start using the PokeAPI, import the module. All available endpoints are mounted as static properties of the module.
 ```js
 // ES6 imports
-import PokeAPI from "pokeapi-typescript";
-// Node.js require
-const PokeAPI = require("pokeapi-typescript");
+import { PokeAPI } from "pokeapi-typescript";
 ```
 
 ### Endpoints

@@ -5,7 +5,7 @@ import { Item } from "./Item";
 export interface ItemAttribute {
     id: number;
     name: string;
-    items: Array<NamedApiResource<Item>>;
+    items: ;
     names: Name[];
     descriptions: Description[];
 }

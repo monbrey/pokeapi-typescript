@@ -7,5 +7,5 @@ export interface NamedApiResourceList<T> {
     count: number;
     next: string;
     previous: string;
-    results: Array<NamedApiResource<T>>;
+    results: ;
 }

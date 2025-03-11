@@ -19,7 +19,7 @@ export interface Item {
     cost: number;
     fling_power: number;
     fling_effect: NamedApiResource<ItemFlingEffect>;
-    attributes: Array<NamedApiResource<ItemAttribute>>;
+    attributes: ;
     category: ItemCategory;
     effect_entries: VerboseEffect[];
     flavor_text_entries: VersionGroupFlavorText[];

@@ -5,6 +5,6 @@ import { Berry } from "./Berry";
 export interface BerryFirmness {
     id: number;
     name: string;
-    berries: Array<NamedApiResource<Berry>>;
+    berries: ;
     names: Name[];
 }

@@ -1,3 +1,4 @@
+import { Generation } from "../Games/Generation.js";
 import { Version } from "../Games/Version";
 import { VersionGroup } from "../Games/VersionGroup";
 import { Item } from "../Items/Item";
@@ -21,11 +22,12 @@ export interface Pokemon {
     order: number;
     weight: number;
     abilities: PokemonAbility[];
-    forms: Array<NamedApiResource<PokemonForm>>;
+    forms: NamedApiResource<PokemonForm>[];
     game_indices: VersionGameIndex[];
     held_items: PokemonHeldItem[];
     location_area_encounters: string;
     moves: PokemonMove[];
+    past_types: PokemonTypePast[];
     sprites: PokemonSprites;
     species: NamedApiResource<PokemonSpecies>;
     stats: PokemonStat[];
@@ -41,6 +43,16 @@ export interface PokemonAbility {
 export interface PokemonType {
     slot: number;
     type: NamedApiResource<Type>;
+}
+
+export interface PokemonFormType {
+    slot: number;
+    type: NamedApiResource<Type>;
+}
+
+export interface PokemonTypePast {
+    generation: NamedApiResource<Generation>;
+    type: PokemonType[];
 }
 
 export interface PokemonHeldItem {

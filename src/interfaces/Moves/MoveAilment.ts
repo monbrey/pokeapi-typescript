@@ -5,6 +5,6 @@ import { Move } from "./Move";
 export interface MoveAilment {
     id: number;
     name: string;
-    moves: Array<NamedApiResource<Move>>;
+    moves: ;
     names: Name[];
 }

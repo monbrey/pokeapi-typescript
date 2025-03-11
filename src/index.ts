@@ -45,10 +45,9 @@ import type { PokemonShape } from "./interfaces/Pokemon/PokemonShape";
 import type { PokemonSpecies } from "./interfaces/Pokemon/PokemonSpecies";
 import type { Stat } from "./interfaces/Pokemon/Stat";
 import type { Type } from "./interfaces/Pokemon/Type";
-import type { ApiResource } from "./interfaces/Utility/ApiResourceList";
 import type { Language } from "./interfaces/Utility/Language";
-import { Endpoint } from "./lib/Endpoint";
-import { NamedEndpoint } from "./lib/NamedEndpoint";
+import { Endpoint } from "./lib/Endpoint.js";
+import { NamedEndpoint } from "./lib/NamedEndpoint.js";
 
 export type * from "./interfaces/Berries/Berry";
 export type * from "./interfaces/Berries/BerryFirmness";

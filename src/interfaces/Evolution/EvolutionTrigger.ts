@@ -1,10 +1,10 @@
-import { IPokemonSpecies } from "../Pokemon/PokemonSpecies";
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
+import { PokemonSpecies } from "../Pokemon/PokemonSpecies";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
 
-export interface IEvolutionTrigger {
+export interface EvolutionTrigger {
     id: number;
     name: string;
-    names: IName[];
-    pokemon_species: Array<INamedApiResource<IPokemonSpecies>>;
+    names: Name[];
+    pokemon_species: Array<NamedApiResource<PokemonSpecies>>;
 }

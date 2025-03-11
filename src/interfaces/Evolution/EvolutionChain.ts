@@ -1,41 +1,41 @@
-import { IItem } from "../Items/Item";
-import { ILocation } from "../Locations/Location";
-import { IMove } from "../Moves/Move";
-import { IPokemonSpecies } from "../Pokemon/PokemonSpecies";
-import { IType } from "../Pokemon/Type";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IEvolutionTrigger } from "./EvolutionTrigger";
+import { Item } from "../Items/Item";
+import { Location } from "../Locations/Location";
+import { Move } from "../Moves/Move";
+import { PokemonSpecies } from "../Pokemon/PokemonSpecies";
+import { Type } from "../Pokemon/Type";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { EvolutionTrigger } from "./EvolutionTrigger";
 
-export interface IEvolutionChain {
+export interface EvolutionChain {
     id: number;
-    baby_trigger_item: INamedApiResource<IItem>;
-    chain: IChainLink;
+    baby_trigger_item: NamedApiResource<Item>;
+    chain: ChainLink;
 }
 
-export interface IChainLink {
+export interface ChainLink {
     is_baby: boolean;
-    species: INamedApiResource<IPokemonSpecies>;
-    evolution_details: IEvolutionDetail[];
-    evolves_to: IChainLink[];
+    species: NamedApiResource<PokemonSpecies>;
+    evolution_details: EvolutionDetail[];
+    evolves_to: ChainLink[];
 }
 
-export interface IEvolutionDetail {
-    item: INamedApiResource<IItem>;
-    trigger: INamedApiResource<IEvolutionTrigger>;
+export interface EvolutionDetail {
+    item: NamedApiResource<Item>;
+    trigger: NamedApiResource<EvolutionTrigger>;
     gender: number;
-    held_item: INamedApiResource<IItem>;
-    move: INamedApiResource<IMove>;
-    known_move_type: INamedApiResource<IType>;
-    location: INamedApiResource<ILocation>;
+    held_item: NamedApiResource<Item>;
+    move: NamedApiResource<Move>;
+    known_move_type: NamedApiResource<Type>;
+    location: NamedApiResource<Location>;
     min_level: number;
     min_happiness: number;
     min_beauty: number;
     min_affection: number;
     needs_overworld_rain: boolean;
-    party_species: INamedApiResource<IPokemonSpecies>;
-    party_type: INamedApiResource<IType>;
+    party_species: NamedApiResource<PokemonSpecies>;
+    party_type: NamedApiResource<Type>;
     relative_physical_stats: number;
     time_of_day: string;
-    trade_species: INamedApiResource<IPokemonSpecies>;
+    trade_species: NamedApiResource<PokemonSpecies>;
     turn_upside_down: boolean;
 }

@@ -1,9 +1,9 @@
-import { IVersionGroup } from "../Games/VersionGroup";
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IPokemon } from "./Pokemon";
+import { VersionGroup } from "../Games/VersionGroup";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Pokemon } from "./Pokemon";
 
-export interface IPokemonForm {
+export interface PokemonForm {
     id: number;
     name: string;
     order: number;
@@ -12,14 +12,14 @@ export interface IPokemonForm {
     is_battle_only: boolean;
     is_mega: boolean;
     form_name: string;
-    pokemon: INamedApiResource<IPokemon>;
-    sprites: IPokemonFormSprites;
-    version_group: INamedApiResource<IVersionGroup>;
-    names: IName[];
-    form_names: IName[];
+    pokemon: NamedApiResource<Pokemon>;
+    sprites: PokemonFormSprites;
+    version_group: NamedApiResource<VersionGroup>;
+    names: Name[];
+    form_names: Name[];
 }
 
-export interface IPokemonFormSprites {
+export interface PokemonFormSprites {
     front_default: string;
     front_shiny: string;
     back_default: string;

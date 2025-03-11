@@ -1,76 +1,76 @@
-import { IEncounterConditionValue } from "../Encounters/EncounterConditionValue";
-import { IEncounterMethod } from "../Encounters/EncounterMethod";
-import { IGeneration } from "../Games/Generation";
-import { IVersion } from "../Games/Version";
-import { IVersionGroup } from "../Games/VersionGroup";
-import { IMachine } from "../Machines/Machine";
-import { IApiResource } from "./ApiResourceList";
-import { ILanguage } from "./Language";
-import { INamedApiResource } from "./NamedApiResourceList";
+import { EncounterConditionValue } from "../Encounters/EncounterConditionValue";
+import { EncounterMethod } from "../Encounters/EncounterMethod";
+import { Generation } from "../Games/Generation";
+import { Version } from "../Games/Version";
+import { VersionGroup } from "../Games/VersionGroup";
+import { Machine } from "../Machines/Machine";
+import { ApiResource } from "./ApiResourceList";
+import { Language } from "./Language";
+import { NamedApiResource } from "./NamedApiResourceList";
 
-export interface ICacheableResource {
+export interface CacheableResource {
     id: number;
     name: string;
 }
 
-export interface IDescription {
+export interface Description {
     description: string;
-    language: INamedApiResource<ILanguage>;
+    language: NamedApiResource<Language>;
 }
 
-export interface IEffect {
+export interface Effect {
     effet: string;
-    language: INamedApiResource<ILanguage>;
+    language: NamedApiResource<Language>;
 }
 
-export interface IEncounter {
+export interface Encounter {
     min_level: number;
     max_level: number;
-    condition_values: Array<INamedApiResource<IEncounterConditionValue>>;
+    condition_values: Array<NamedApiResource<EncounterConditionValue>>;
     chance: number;
-    method: INamedApiResource<IEncounterMethod>;
+    method: NamedApiResource<EncounterMethod>;
 }
 
-export interface IFlavorText {
+export interface FlavorText {
     flavor_text: string;
-    language: INamedApiResource<ILanguage>;
-    version: INamedApiResource<IVersion>;
+    language: NamedApiResource<Language>;
+    version: NamedApiResource<Version>;
 }
 
-export interface IGenerationGameIndex {
+export interface GenerationGameIndex {
     game_index: number;
-    generation: INamedApiResource<IGeneration>;
+    generation: NamedApiResource<Generation>;
 }
 
-export interface IMachineVersionDetail {
-    machine: IApiResource<IMachine>;
-    version_group: INamedApiResource<IVersionGroup>;
+export interface MachineVersionDetail {
+    machine: ApiResource<Machine>;
+    version_group: NamedApiResource<VersionGroup>;
 }
 
-export interface IName {
+export interface Name {
     name: string;
-    language: INamedApiResource<ILanguage>;
+    language: NamedApiResource<Language>;
 }
 
-export interface IVerboseEffect {
+export interface VerboseEffect {
     effect: string;
     short_effect: string;
-    language: INamedApiResource<ILanguage>;
+    language: NamedApiResource<Language>;
 }
 
-export interface IVersionEncounterDetail {
-    version: INamedApiResource<IVersion>;
+export interface VersionEncounterDetail {
+    version: NamedApiResource<Version>;
     max_chance: number;
-    encounter_details: IEncounter[];
+    encounter_details: Encounter[];
 }
 
-export interface IVersionGameIndex {
+export interface VersionGameIndex {
     game_index: number;
-    version: INamedApiResource<IVersion>;
+    version: NamedApiResource<Version>;
 }
 
-export interface IVersionGroupFlavorText {
+export interface VersionGroupFlavorText {
     text: string;
-    language: INamedApiResource<ILanguage>;
-    version_group: INamedApiResource<IVersionGroup>;
+    language: NamedApiResource<Language>;
+    version_group: NamedApiResource<VersionGroup>;
 }

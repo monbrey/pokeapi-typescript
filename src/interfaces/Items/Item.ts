@@ -1,46 +1,46 @@
-import { IEvolutionChain } from "../Evolution/EvolutionChain";
-import { IVersion } from "../Games/Version";
-import { IApiResource } from "../Utility/ApiResourceList";
+import { EvolutionChain } from "../Evolution/EvolutionChain";
+import { Version } from "../Games/Version";
+import { ApiResource } from "../Utility/ApiResourceList";
 import {
-    IGenerationGameIndex,
-    IMachineVersionDetail,
-    IName,
-    IVerboseEffect,
-    IVersionGroupFlavorText
+    GenerationGameIndex,
+    MachineVersionDetail,
+    Name,
+    VerboseEffect,
+    VersionGroupFlavorText
 } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IItemAttribute } from "./ItemAttribute";
-import { IItemCategory } from "./ItemCategory";
-import { IItemFlingEffect } from "./ItemFlingEffect";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { ItemAttribute } from "./ItemAttribute";
+import { ItemCategory } from "./ItemCategory";
+import { ItemFlingEffect } from "./ItemFlingEffect";
 
-export interface IItem {
+export interface Item {
     id: number;
     name: string;
     cost: number;
     fling_power: number;
-    fling_effect: INamedApiResource<IItemFlingEffect>;
-    attributes: Array<INamedApiResource<IItemAttribute>>;
-    category: IItemCategory;
-    effect_entries: IVerboseEffect[];
-    flavor_text_entries: IVersionGroupFlavorText[];
-    game_indices: IGenerationGameIndex[];
-    names: IName[];
-    sprites: IItemSprites;
-    held_by_pokemon: IItemHolderPokemon[];
-    baby_trigger_for: IApiResource<IEvolutionChain>;
-    machines: IMachineVersionDetail[];
+    fling_effect: NamedApiResource<ItemFlingEffect>;
+    attributes: Array<NamedApiResource<ItemAttribute>>;
+    category: ItemCategory;
+    effect_entries: VerboseEffect[];
+    flavor_text_entries: VersionGroupFlavorText[];
+    game_indices: GenerationGameIndex[];
+    names: Name[];
+    sprites: ItemSprites;
+    held_by_pokemon: ItemHolderPokemon[];
+    baby_trigger_for: ApiResource<EvolutionChain>;
+    machines: MachineVersionDetail[];
 }
 
-export interface IItemSprites {
+export interface ItemSprites {
     default: string;
 }
 
-export interface IItemHolderPokemon {
+export interface ItemHolderPokemon {
     pokemon: string;
-    version_details: IItemHolderPokemonVersionDetail[];
+    version_details: ItemHolderPokemonVersionDetail[];
 }
 
-export interface IItemHolderPokemonVersionDetail {
+export interface ItemHolderPokemonVersionDetail {
     rarity: string;
-    version: INamedApiResource<IVersion>;
+    version: NamedApiResource<Version>;
 }

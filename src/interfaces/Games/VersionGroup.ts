@@ -1,17 +1,17 @@
-import { IRegion } from "../Locations/Region";
-import { IMoveLearnMethod } from "../Moves/MoveLearnMethod";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IGeneration } from "./Generation";
-import { IPokedex } from "./Pokedex";
-import { IVersion } from "./Version";
+import { Region } from "../Locations/Region";
+import { MoveLearnMethod } from "../Moves/MoveLearnMethod";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Generation } from "./Generation";
+import { Pokedex } from "./Pokedex";
+import { Version } from "./Version";
 
-export interface IVersionGroup {
+export interface VersionGroup {
     id: number;
     name: string;
     order: number;
-    generation: INamedApiResource<IGeneration>;
-    move_learn_methods: Array<INamedApiResource<IMoveLearnMethod>>;
-    pokedexes: Array<INamedApiResource<IPokedex>>;
-    regions: Array<INamedApiResource<IRegion>>;
-    versions: Array<INamedApiResource<IVersion>>;
+    generation: NamedApiResource<Generation>;
+    move_learn_methods: Array<NamedApiResource<MoveLearnMethod>>;
+    pokedexes: Array<NamedApiResource<Pokedex>>;
+    regions: Array<NamedApiResource<Region>>;
+    versions: Array<NamedApiResource<Version>>;
 }

@@ -1,10 +1,10 @@
-import { IItem } from "../Items/Item";
-import { IType } from "../Pokemon/Type";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IBerryFirmness } from "./BerryFirmness";
-import { IBerryFlavor } from "./BerryFlavor";
+import { Item } from "../Items/Item";
+import { Type } from "../Pokemon/Type";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { BerryFirmness } from "./BerryFirmness";
+import { BerryFlavor } from "./BerryFlavor";
 
-export interface IBerry {
+export interface Berry {
     id: number;
     name: string;
     growth_time: number;
@@ -13,28 +13,13 @@ export interface IBerry {
     size: number;
     smoothness: number;
     soil_dryness: number;
-    firmness: INamedApiResource<IBerryFirmness>;
-    flavors: IBerryFlavorMap[];
-    item: INamedApiResource<IItem>;
-    natural_gift_type: INamedApiResource<IType>;
+    firmness: NamedApiResource<BerryFirmness>;
+    flavors: BerryFlavorMap[];
+    item: NamedApiResource<Item>;
+    natural_gift_type: NamedApiResource<Type>;
 }
 
-export interface IBerryFlavorMap {
+export interface BerryFlavorMap {
     potency: number;
-    flavor: INamedApiResource<IBerryFlavor>;
-}
-
-export class Berry implements IBerry {
-    public id: number;
-    public name: string;
-    public growth_time: number;
-    public max_harvest: number;
-    public natural_gift_power: number;
-    public size: number;
-    public smoothness: number;
-    public soil_dryness: number;
-    public firmness: INamedApiResource<IBerryFirmness>;
-    public flavors: IBerryFlavorMap[];
-    public item: INamedApiResource<IItem>;
-    public natural_gift_type: INamedApiResource<IType>;
+    flavor: NamedApiResource<BerryFlavor>;
 }

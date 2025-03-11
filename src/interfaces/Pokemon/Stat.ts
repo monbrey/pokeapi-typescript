@@ -1,34 +1,34 @@
-import { IMove } from "../Moves/Move";
-import { IMoveDamageClass } from "../Moves/MoveDamageClass";
-import { IApiResource } from "../Utility/ApiResourceList";
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { ICharacteristic } from "./Characteristic";
-import { INature } from "./Nature";
+import { Move } from "../Moves/Move";
+import { MoveDamageClass } from "../Moves/MoveDamageClass";
+import { ApiResource } from "../Utility/ApiResourceList";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Characteristic } from "./Characteristic";
+import { Nature } from "./Nature";
 
-export interface IStat {
+export interface Stat {
     id: number;
     name: string;
     name_index: number;
     is_battle_only: boolean;
-    affecting_moves: IMoveStatAffectSets;
-    affecting_natures: INatureStatAffectSets;
-    characteristics: IApiResource<ICharacteristic>;
-    move_damage_class: INamedApiResource<IMoveDamageClass>;
-    names: IName[];
+    affecting_moves: MoveStatAffectSets;
+    affecting_natures: NatureStatAffectSets;
+    characteristics: ApiResource<Characteristic>;
+    move_damage_class: NamedApiResource<MoveDamageClass>;
+    names: Name[];
 }
 
-export interface IMoveStatAffectSets {
-    increase: IMoveStatAffect[];
-    decrease: IMoveStatAffect[];
+export interface MoveStatAffectSets {
+    increase: MoveStatAffect[];
+    decrease: MoveStatAffect[];
 }
 
-export interface IMoveStatAffect {
+export interface MoveStatAffect {
     change: number;
-    move: INamedApiResource<IMove>;
+    move: NamedApiResource<Move>;
 }
 
-export interface INatureStatAffectSets {
-    increase: Array<INamedApiResource<INature>>;
-    decrease: Array<INamedApiResource<INature>>;
+export interface NatureStatAffectSets {
+    increase: Array<NamedApiResource<Nature>>;
+    decrease: Array<NamedApiResource<Nature>>;
 }

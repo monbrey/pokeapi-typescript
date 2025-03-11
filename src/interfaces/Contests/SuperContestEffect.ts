@@ -1,10 +1,10 @@
-import { IMove } from "../Moves/Move";
-import { IFlavorText } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
+import { Move } from "../Moves/Move.js";
+import { FlavorText } from "../Utility/CommonModels.js";
+import { NamedApiResource } from "../Utility/NamedApiResourceList.js";
 
-export interface ISuperContestEffect {
-    id: number;
-    name: string;
-    flavor_text_entries: IFlavorText[];
-    moves: Array<INamedApiResource<IMove>>;
-}
+export type SuperContestEffect = {
+	flavor_text_entries: FlavorText[];
+	id: number;
+	moves: NamedApiResource<Move>[];
+	name: string;
+};

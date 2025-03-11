@@ -1,29 +1,29 @@
-import { IBerryFlavor } from "../Berries/BerryFlavor";
-import { IMoveBattleStyle } from "../Moves/MoveBattleStyle";
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IPokeathlonStat } from "./PokeathlonStat";
-import { IStat } from "./Stat";
+import { BerryFlavor } from "../Berries/BerryFlavor";
+import { MoveBattleStyle } from "../Moves/MoveBattleStyle";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { PokeathlonStat } from "./PokeathlonStat";
+import { Stat } from "./Stat";
 
-export interface INature {
+export interface Nature {
     id: number;
     name: string;
-    decreased_stat: INamedApiResource<IStat>;
-    increased_stat: INamedApiResource<IStat>;
-    hates_flavor: INamedApiResource<IBerryFlavor>;
-    likes_flavor: INamedApiResource<IBerryFlavor>;
-    pokeathlon_stat_changes: INatureStatChange[];
-    move_battle_style_preference: IMoveBattleStylePreference[];
-    names: IName[];
+    decreased_stat: NamedApiResource<Stat>;
+    increased_stat: NamedApiResource<Stat>;
+    hates_flavor: NamedApiResource<BerryFlavor>;
+    likes_flavor: NamedApiResource<BerryFlavor>;
+    pokeathlon_stat_changes: NatureStatChange[];
+    move_battle_style_preference: MoveBattleStylePreference[];
+    names: Name[];
 }
 
-export interface INatureStatChange {
+export interface NatureStatChange {
     max_change: number;
-    pokeathlon_stat: INamedApiResource<IPokeathlonStat>;
+    pokeathlon_stat: NamedApiResource<PokeathlonStat>;
 }
 
-export interface IMoveBattleStylePreference {
+export interface MoveBattleStylePreference {
     low_hp_preference: number;
     high_hp_preference: number;
-    move_battle_style: INamedApiResource<IMoveBattleStyle>;
+    move_battle_style: NamedApiResource<MoveBattleStyle>;
 }

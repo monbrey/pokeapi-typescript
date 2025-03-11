@@ -1,11 +1,11 @@
-import { IVersionGroup } from "../Games/VersionGroup";
-import { IItem } from "../Items/Item";
-import { IMove } from "../Moves/Move";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
+import { VersionGroup } from "../Games/VersionGroup";
+import { Item } from "../Items/Item";
+import { Move } from "../Moves/Move";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
 
-export interface IMachine {
+export interface Machine {
     id: number;
-    item: INamedApiResource<IItem>;
-    move: INamedApiResource<IMove>;
-    version_group: INamedApiResource<IVersionGroup>;
+    item: NamedApiResource<Item>;
+    move: NamedApiResource<Move>;
+    version_group: NamedApiResource<VersionGroup>;
 }

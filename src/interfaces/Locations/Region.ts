@@ -1,16 +1,16 @@
-import { IGeneration } from "../Games/Generation";
-import { IPokedex } from "../Games/Pokedex";
-import { IVersionGroup } from "../Games/VersionGroup";
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { ILocation } from "./Location";
+import { Generation } from "../Games/Generation";
+import { Pokedex } from "../Games/Pokedex";
+import { VersionGroup } from "../Games/VersionGroup";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Location } from "./Location";
 
-export interface IRegion {
+export interface Region {
     id: number;
-    locations: Array<INamedApiResource<ILocation>>;
+    locations: Array<NamedApiResource<Location>>;
     name: string;
-    names: IName[];
-    main_generation: INamedApiResource<IGeneration>;
-    pokedexes: Array<INamedApiResource<IPokedex>>;
-    version_groups: Array<INamedApiResource<IVersionGroup>>;
+    names: Name[];
+    main_generation: NamedApiResource<Generation>;
+    pokedexes: Array<NamedApiResource<Pokedex>>;
+    version_groups: Array<NamedApiResource<VersionGroup>>;
 }

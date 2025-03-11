@@ -14,9 +14,11 @@
     "API"
   ],
   "scripts": {
-    "build": "tsc",
-    "lint": "npx tslint -p tsconfig.json --fix",
-    "prepare": "npm run build",
+    "build": "tsc -p tsconfig.json",
+    "clean": "npx rimraf dist",
+    "lint": "npx eslint src/**/*.ts",
+    "lint:fix": "npx eslint src/**/*.ts --fix",
+    "prebuild": "npm run clean",
     "preversion": "npm run lint",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
@@ -31,15 +33,12 @@
     "url": "https://github.com/Monbrey/pokeapi-typescript/issues"
   },
   "homepage": "https://github.com/Monbrey/pokeapi-typescript#readme",
-  "dependencies": {
-    "@discordjs/collection": "^0.1.4",
-    "@ungap/url-search-params": "^0.1.4",
-    "cross-fetch": "^3.0.4"
-  },
   "devDependencies": {
-    "@types/node": "^12.7.0",
-    "tslint": "^5.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.5.3"
+    "@eslint/js": "^9.22.0",
+    "@types/node": "^22.13.10",
+    "eslint": "^9.22.0",
+    "eslint-config-neon": "^0.2.4",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1"
   }
 }

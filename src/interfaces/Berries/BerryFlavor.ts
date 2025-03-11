@@ -1,17 +1,17 @@
-import { IContestType } from "../Contests/ContestType";
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IBerry } from "./Berry";
+import { ContestType } from "../Contests/ContestType";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Berry } from "./Berry";
 
-export interface IBerryFlavor {
+export interface BerryFlavor {
     id: number;
     name: string;
-    berries: IFlavorBerryMap[];
-    contest_type: INamedApiResource<IContestType>;
-    names: IName[];
+    berries: FlavorBerryMap[];
+    contest_type: NamedApiResource<ContestType>;
+    names: Name[];
 }
 
-export interface IFlavorBerryMap {
+export interface FlavorBerryMap {
     potency: number;
-    berry: INamedApiResource<IBerry>;
+    berry: NamedApiResource<Berry>;
 }

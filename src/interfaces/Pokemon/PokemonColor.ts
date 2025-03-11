@@ -1,10 +1,10 @@
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IPokemonSpecies } from "./PokemonSpecies";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { PokemonSpecies } from "./PokemonSpecies";
 
-export interface IPokemonColor {
+export interface PokemonColor {
     id: number;
     name: string;
-    names: IName[];
-    pokemon_species: INamedApiResource<IPokemonSpecies>;
+    names: Name[];
+    pokemon_species: NamedApiResource<PokemonSpecies>;
 }

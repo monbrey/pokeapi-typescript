@@ -1,11 +1,11 @@
-export interface INamedApiResource<T> {
+export interface NamedApiResource<T> {
     name: string;
     url: string;
 }
 
-export interface INamedApiResourceList<T> {
+export interface NamedApiResourceList<T> {
     count: number;
     next: string;
     previous: string;
-    results: Array<INamedApiResource<T>>;
+    results: Array<NamedApiResource<T>>;
 }

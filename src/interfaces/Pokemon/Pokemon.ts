@@ -1,18 +1,18 @@
-import { IVersion } from "../Games/Version";
-import { IVersionGroup } from "../Games/VersionGroup";
-import { IItem } from "../Items/Item";
-import { ILocation } from "../Locations/Location";
-import { IMove } from "../Moves/Move";
-import { IMoveLearnMethod } from "../Moves/MoveLearnMethod";
-import { IVersionEncounterDetail, IVersionGameIndex } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IAbility } from "./Ability";
-import { IPokemonForm } from "./PokemonForm";
-import { IPokemonSpecies } from "./PokemonSpecies";
-import { IStat } from "./Stat";
-import { IType } from "./Type";
+import { Version } from "../Games/Version";
+import { VersionGroup } from "../Games/VersionGroup";
+import { Item } from "../Items/Item";
+import { Location } from "../Locations/Location";
+import { Move } from "../Moves/Move";
+import { MoveLearnMethod } from "../Moves/MoveLearnMethod";
+import { VersionEncounterDetail, VersionGameIndex } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Ability } from "./Ability";
+import { PokemonForm } from "./PokemonForm";
+import { PokemonSpecies } from "./PokemonSpecies";
+import { Stat } from "./Stat";
+import { Type } from "./Type";
 
-export interface IPokemon {
+export interface Pokemon {
     id: number;
     name: string;
     base_experience: number;
@@ -20,57 +20,57 @@ export interface IPokemon {
     is_default: boolean;
     order: number;
     weight: number;
-    abilities: IPokemonAbility[];
-    forms: Array<INamedApiResource<IPokemonForm>>;
-    game_indices: IVersionGameIndex[];
-    held_items: IPokemonHeldItem[];
+    abilities: PokemonAbility[];
+    forms: Array<NamedApiResource<PokemonForm>>;
+    game_indices: VersionGameIndex[];
+    held_items: PokemonHeldItem[];
     location_area_encounters: string;
-    moves: IPokemonMove[];
-    sprites: IPokemonSprites;
-    species: INamedApiResource<IPokemonSpecies>;
-    stats: IPokemonStat[];
-    types: IPokemonType[];
+    moves: PokemonMove[];
+    sprites: PokemonSprites;
+    species: NamedApiResource<PokemonSpecies>;
+    stats: PokemonStat[];
+    types: PokemonType[];
 }
 
-export interface IPokemonAbility {
+export interface PokemonAbility {
     is_hidden: true;
     slot: number;
-    ability: INamedApiResource<IAbility>;
+    ability: NamedApiResource<Ability>;
 }
 
-export interface IPokemonType {
+export interface PokemonType {
     slot: number;
-    type: INamedApiResource<IType>;
+    type: NamedApiResource<Type>;
 }
 
-export interface IPokemonHeldItem {
-    item: INamedApiResource<IItem>;
-    version_details: IPokemonHeldItemVersion[];
+export interface PokemonHeldItem {
+    item: NamedApiResource<Item>;
+    version_details: PokemonHeldItemVersion[];
 }
 
-export interface IPokemonHeldItemVersion {
-    version: INamedApiResource<IVersion>;
+export interface PokemonHeldItemVersion {
+    version: NamedApiResource<Version>;
     rarity: number;
 }
 
-export interface IPokemonMove {
-    move: INamedApiResource<IMove>;
-    version_group_details: IPokemonMoveVersion[];
+export interface PokemonMove {
+    move: NamedApiResource<Move>;
+    version_group_details: PokemonMoveVersion[];
 }
 
-export interface IPokemonMoveVersion {
-    move_learn_method: INamedApiResource<IMoveLearnMethod>;
-    version_group: INamedApiResource<IVersionGroup>;
+export interface PokemonMoveVersion {
+    move_learn_method: NamedApiResource<MoveLearnMethod>;
+    version_group: NamedApiResource<VersionGroup>;
     level_learned_at: number;
 }
 
-export interface IPokemonStat {
-    stat: INamedApiResource<IStat>;
+export interface PokemonStat {
+    stat: NamedApiResource<Stat>;
     effort: number;
     base_stat: number;
 }
 
-export interface IPokemonSprites {
+export interface PokemonSprites {
     back_default: string;
     back_female: string;
     back_shiny: string;
@@ -79,11 +79,11 @@ export interface IPokemonSprites {
     front_female: string;
     front_shiny: string;
     front_shiny_female: string;
-    other: IPokemonSpriteOther;
-    versions: IPokemonSpriteVersion;
+    other: PokemonSpriteOther;
+    versions: PokemonSpriteVersion;
 }
 
-interface ISpriteVariant {
+interface SpriteVariant {
     back_default: string | null;
     back_female: string | null;
     back_gray: string | null;
@@ -96,33 +96,33 @@ interface ISpriteVariant {
     front_shiny_female: string | null;
 }
 
-export interface IPokemonSpriteOther {
-    dream_world: Pick<ISpriteVariant, "front_default" | "front_female">;
+export interface PokemonSpriteOther {
+    dream_world: Pick<SpriteVariant, "front_default" | "front_female">;
     "official-artwork": {
         front_default: string;
     };
 }
 
-interface IGeneration1Sprite {
-    "red-blue": Pick<ISpriteVariant, "back_default" | "back_gray" | "front_default" | "front_gray">;
-    yellow: Pick<ISpriteVariant, "back_default" | "back_gray" | "front_default" | "front_gray">;
+interface Generation1Sprite {
+    "red-blue": Pick<SpriteVariant, "back_default" | "back_gray" | "front_default" | "front_gray">;
+    yellow: Pick<SpriteVariant, "back_default" | "back_gray" | "front_default" | "front_gray">;
 }
 
-interface IGeneration2Sprite {
-    crystal: Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
-    gold: Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
-    silver: Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+interface Generation2Sprite {
+    crystal: Pick<SpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+    gold: Pick<SpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+    silver: Pick<SpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
 }
 
-interface IGeneration3Sprite {
-    emerald: Pick<ISpriteVariant, "front_default" | "front_shiny">;
-    "firered-leafgreen": Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
-    "ruby-sapphire": Pick<ISpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+interface Generation3Sprite {
+    emerald: Pick<SpriteVariant, "front_default" | "front_shiny">;
+    "firered-leafgreen": Pick<SpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
+    "ruby-sapphire": Pick<SpriteVariant, "back_default" | "back_shiny" | "front_default" | "front_shiny">;
 }
 
-interface IGeneration4Sprite {
+interface Generation4Sprite {
     "diamond-pearl": Pick<
-        ISpriteVariant,
+        SpriteVariant,
         "back_default" |
         "back_female" |
         "back_shiny" |
@@ -133,7 +133,7 @@ interface IGeneration4Sprite {
         "front_shiny_female"
     >;
     "heartgold-soulsilver": Pick<
-        ISpriteVariant,
+        SpriteVariant,
         "back_default" |
         "back_female" |
         "back_shiny" |
@@ -144,7 +144,7 @@ interface IGeneration4Sprite {
         "front_shiny_female"
     >;
     platinum: Pick<
-        ISpriteVariant,
+        SpriteVariant,
         "back_default" |
         "back_female" |
         "back_shiny" |
@@ -156,8 +156,8 @@ interface IGeneration4Sprite {
     >;
 }
 
-type IBlackWhiteSprite = Pick<
-    ISpriteVariant,
+type BlackWhiteSprite = Pick<
+    SpriteVariant,
     "back_default" |
     "back_female" |
     "back_shiny" |
@@ -168,20 +168,20 @@ type IBlackWhiteSprite = Pick<
     "front_shiny_female"
 >;
 
-interface IGeneration5Sprite {
-    "black-white": IBlackWhiteSprite & { animated: IBlackWhiteSprite };
+interface Generation5Sprite {
+    "black-white": BlackWhiteSprite & { animated: BlackWhiteSprite };
 }
 
-interface IGeneration6Sprite {
+interface Generation6Sprite {
     "omegaruby-alphasapphire": Pick<
-        ISpriteVariant,
+        SpriteVariant,
         "front_default" |
         "front_female" |
         "front_shiny" |
         "front_shiny_female"
     >;
     "x-y": Pick<
-        ISpriteVariant,
+        SpriteVariant,
         "front_default" |
         "front_female" |
         "front_shiny" |
@@ -189,10 +189,10 @@ interface IGeneration6Sprite {
     >;
 }
 
-interface IGeneration7Sprite {
-    icons: Pick<ISpriteVariant, "front_default" | "front_female">;
+interface Generation7Sprite {
+    icons: Pick<SpriteVariant, "front_default" | "front_female">;
     "ultra-sun-ultra-moon": Pick<
-        ISpriteVariant,
+        SpriteVariant,
         "front_default" |
         "front_female" |
         "front_shiny" |
@@ -200,22 +200,22 @@ interface IGeneration7Sprite {
     >;
 }
 
-interface IGeneration8Sprite {
-    icons: Pick<ISpriteVariant, "front_default" | "front_female">;
+interface Generation8Sprite {
+    icons: Pick<SpriteVariant, "front_default" | "front_female">;
 }
 
-interface IPokemonSpriteVersion {
-    "generation-i": IGeneration1Sprite;
-    "generation-ii": IGeneration2Sprite;
-    "generation-iii": IGeneration3Sprite;
-    "generation-iv": IGeneration4Sprite;
-    "generation-v": IGeneration5Sprite;
-    "generation-vi": IGeneration6Sprite;
-    "generation-vii": IGeneration7Sprite;
-    "generation-viii": IGeneration8Sprite;
+interface PokemonSpriteVersion {
+    "generation-i": Generation1Sprite;
+    "generation-ii": Generation2Sprite;
+    "generation-iii": Generation3Sprite;
+    "generation-iv": Generation4Sprite;
+    "generation-v": Generation5Sprite;
+    "generation-vi": Generation6Sprite;
+    "generation-vii": Generation7Sprite;
+    "generation-viii": Generation8Sprite;
 }
 
-export interface ILocationAreaEncounter {
-    location_area: INamedApiResource<ILocation>;
-    version_details: IVersionEncounterDetail[];
+export interface LocationAreaEncounter {
+    location_area: NamedApiResource<Location>;
+    version_details: VersionEncounterDetail[];
 }

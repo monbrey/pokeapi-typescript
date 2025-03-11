@@ -1,14 +1,14 @@
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IPokemonSpecies } from "./PokemonSpecies";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { PokemonSpecies } from "./PokemonSpecies";
 
-export interface IGender {
+export interface Gender {
     id: number;
     name: string;
-    pokemon_species_details: IPokemonSpeciesGender[];
-    required_for_evolution: Array<INamedApiResource<IPokemonSpecies>>;
+    pokemon_species_details: PokemonSpeciesGender[];
+    required_for_evolution: Array<NamedApiResource<PokemonSpecies>>;
 }
 
-export interface IPokemonSpeciesGender {
+export interface PokemonSpeciesGender {
     rate: number;
-    pokemon_species: INamedApiResource<IPokemonSpecies>;
+    pokemon_species: NamedApiResource<PokemonSpecies>;
 }

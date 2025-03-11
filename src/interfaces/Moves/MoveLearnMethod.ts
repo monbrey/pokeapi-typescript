@@ -1,11 +1,11 @@
-import { IVersionGroup } from "../Games/VersionGroup";
-import { IDescription, IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
+import { VersionGroup } from "../Games/VersionGroup";
+import { Description, Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
 
-export interface IMoveLearnMethod {
+export interface MoveLearnMethod {
     id: number;
     name: string;
-    descriptions: IDescription[];
-    names: IName[];
-    version_groups: Array<INamedApiResource<IVersionGroup>>;
+    descriptions: Description[];
+    names: Name[];
+    version_groups: Array<NamedApiResource<VersionGroup>>;
 }

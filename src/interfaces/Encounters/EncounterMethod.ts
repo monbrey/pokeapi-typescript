@@ -1,8 +1,8 @@
-import { IName } from "../Utility/CommonModels";
+import { Name } from "../Utility/CommonModels";
 
-export interface IEncounterMethod {
+export interface EncounterMethod {
     id: number;
     name: string;
     order: number;
-    names: IName[];
+    names: Name[];
 }

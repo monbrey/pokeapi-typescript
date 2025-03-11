@@ -1,10 +1,10 @@
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IMove } from "./Move";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Move } from "./Move";
 
-export interface IMoveAilment {
+export interface MoveAilment {
     id: number;
     name: string;
-    moves: Array<INamedApiResource<IMove>>;
-    names: IName[];
+    moves: Array<NamedApiResource<Move>>;
+    names: Name[];
 }

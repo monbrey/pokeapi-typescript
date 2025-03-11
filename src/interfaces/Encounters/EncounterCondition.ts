@@ -1,10 +1,10 @@
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IEncounterConditionValue } from "./EncounterConditionValue";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { EncounterConditionValue } from "./EncounterConditionValue";
 
-export interface IEncounterCondition {
+export interface EncounterCondition {
     id: number;
     name: string;
-    names: IName[];
-    values: Array<INamedApiResource<IEncounterConditionValue>>;
+    names: Name[];
+    values: Array<NamedApiResource<EncounterConditionValue>>;
 }

@@ -1,13 +1,13 @@
-import { IGenerationGameIndex, IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { ILocationArea } from "./LocationArea";
-import { IRegion } from "./Region";
+import { GenerationGameIndex, Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { LocationArea } from "./LocationArea";
+import { Region } from "./Region";
 
-export interface ILocation {
+export interface Location {
     id: number;
     name: string;
-    region: INamedApiResource<IRegion>;
-    names: IName[];
-    game_indices: IGenerationGameIndex[];
-    areas: Array<INamedApiResource<ILocationArea>>;
+    region: NamedApiResource<Region>;
+    names: Name[];
+    game_indices: GenerationGameIndex[];
+    areas: Array<NamedApiResource<LocationArea>>;
 }

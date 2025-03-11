@@ -1,11 +1,11 @@
-import { IDescription, IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IItem } from "./Item";
+import { Description, Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Item } from "./Item";
 
-export interface IItemAttribute {
+export interface ItemAttribute {
     id: number;
     name: string;
-    items: Array<INamedApiResource<IItem>>;
-    names: IName[];
-    descriptions: IDescription[];
+    items: Array<NamedApiResource<Item>>;
+    names: Name[];
+    descriptions: Description[];
 }

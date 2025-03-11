@@ -1,9 +1,9 @@
-import { IEffect, IFlavorText } from "../Utility/CommonModels";
+import { Effect, FlavorText } from "../Utility/CommonModels";
 
-export interface IContestEffect {
+export interface ContestEffect {
     id: number;
     appeal: number;
     jam: number;
-    effect_entries: IEffect[];
-    flavor_text_entries: IFlavorText[];
+    effect_entries: Effect[];
+    flavor_text_entries: FlavorText[];
 }

@@ -1,20 +1,20 @@
-import { IRegion } from "../Locations/Region";
-import { IMove } from "../Moves/Move";
-import { IAbility } from "../Pokemon/Ability";
-import { IPokemonSpecies } from "../Pokemon/PokemonSpecies";
-import { IType } from "../Pokemon/Type";
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IVersionGroup } from "./VersionGroup";
+import { Region } from "../Locations/Region";
+import { Move } from "../Moves/Move";
+import { Ability } from "../Pokemon/Ability";
+import { PokemonSpecies } from "../Pokemon/PokemonSpecies";
+import { Type } from "../Pokemon/Type";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { VersionGroup } from "./VersionGroup";
 
-export interface IGeneration {
+export interface Generation {
     id: number;
     name: string;
-    abilities: Array<INamedApiResource<IAbility>>;
-    names: IName[];
-    main_region: INamedApiResource<IRegion>;
-    moves: Array<INamedApiResource<IMove>>;
-    pokemon_species: Array<INamedApiResource<IPokemonSpecies>>;
-    types: Array<INamedApiResource<IType>>;
-    version_groups: Array<INamedApiResource<IVersionGroup>>;
+    abilities: Array<NamedApiResource<Ability>>;
+    names: Name[];
+    main_region: NamedApiResource<Region>;
+    moves: Array<NamedApiResource<Move>>;
+    pokemon_species: Array<NamedApiResource<PokemonSpecies>>;
+    types: Array<NamedApiResource<Type>>;
+    version_groups: Array<NamedApiResource<VersionGroup>>;
 }

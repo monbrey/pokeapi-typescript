@@ -1,20 +1,20 @@
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { INature } from "./Nature";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Nature } from "./Nature";
 
-export interface IPokeathlonStat {
+export interface PokeathlonStat {
     id: number;
     name: string;
-    names: IName[];
-    affecting_natures: INaturePokeathlonStatAffectSets;
+    names: Name[];
+    affecting_natures: NaturePokeathlonStatAffectSets;
 }
 
-export interface INaturePokeathlonStatAffectSets {
-    increase: INaturePokeathlonStatAffect[];
-    decrease: INaturePokeathlonStatAffect[];
+export interface NaturePokeathlonStatAffectSets {
+    increase: NaturePokeathlonStatAffect[];
+    decrease: NaturePokeathlonStatAffect[];
 }
 
-export interface INaturePokeathlonStatAffect {
+export interface NaturePokeathlonStatAffect {
     max_change: number;
-    nature: INamedApiResource<INature>;
+    nature: NamedApiResource<Nature>;
 }

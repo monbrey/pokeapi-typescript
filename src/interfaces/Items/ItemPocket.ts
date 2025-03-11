@@ -1,8 +1,8 @@
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IItemCategory } from "./ItemCategory";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { ItemCategory } from "./ItemCategory";
 
-export interface IItemPocket {
+export interface ItemPocket {
     id: number;
     name: string;
-    categories: Array<INamedApiResource<IItemCategory>>;
+    categories: Array<NamedApiResource<ItemCategory>>;
 }

@@ -1,10 +1,10 @@
-import { IEffect } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IItem } from "./Item";
+import { Effect } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { Item } from "./Item";
 
-export interface IItemFlingEffect {
+export interface ItemFlingEffect {
     id: number;
     name: string;
-    effect_entries: IEffect[];
-    items: Array<INamedApiResource<IItem>>;
+    effect_entries: Effect[];
+    items: Array<NamedApiResource<Item>>;
 }

@@ -1,10 +1,10 @@
-import { IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IVersionGroup } from "./VersionGroup";
+import { Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { VersionGroup } from "./VersionGroup";
 
-export interface IVersion {
+export interface Version {
     id: number;
     name: string;
-    names: IName[];
-    version_group: INamedApiResource<IVersionGroup>;
+    names: Name[];
+    version_group: NamedApiResource<VersionGroup>;
 }

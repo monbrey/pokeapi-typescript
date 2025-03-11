@@ -1,21 +1,21 @@
-import { IRegion } from "../Locations/Region";
-import { IPokemonSpecies } from "../Pokemon/PokemonSpecies";
-import { IDescription, IName } from "../Utility/CommonModels";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IVersionGroup } from "./VersionGroup";
+import { Region } from "../Locations/Region";
+import { PokemonSpecies } from "../Pokemon/PokemonSpecies";
+import { Description, Name } from "../Utility/CommonModels";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { VersionGroup } from "./VersionGroup";
 
-export interface IPokedex {
+export interface Pokedex {
     id: number;
     name: string;
     is_main_series: boolean;
-    descriptions: IDescription[];
-    names: IName[];
-    pokemon_entries: IPokemonEntry[];
-    region: INamedApiResource<IRegion>;
-    version_groups: Array<INamedApiResource<IVersionGroup>>;
+    descriptions: Description[];
+    names: Name[];
+    pokemon_entries: PokemonEntry[];
+    region: NamedApiResource<Region>;
+    version_groups: Array<NamedApiResource<VersionGroup>>;
 }
 
-export interface IPokemonEntry {
+export interface PokemonEntry {
     entry_number: number;
-    pokemon_species: INamedApiResource<IPokemonSpecies>;
+    pokemon_species: NamedApiResource<PokemonSpecies>;
 }

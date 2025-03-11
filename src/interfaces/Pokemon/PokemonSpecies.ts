@@ -1,19 +1,19 @@
-import { IEvolutionChain } from "../Evolution/EvolutionChain";
-import { IGeneration } from "../Games/Generation";
-import { IPokedex } from "../Games/Pokedex";
-import { IPalParkArea } from "../Locations/PalParkArea";
-import { IApiResource } from "../Utility/ApiResourceList";
-import { IDescription, IFlavorText, IName } from "../Utility/CommonModels";
-import { ILanguage } from "../Utility/Language";
-import { INamedApiResource } from "../Utility/NamedApiResourceList";
-import { IEggGroup } from "./EggGroup";
-import { IGrowthRate } from "./GrowthRate";
-import { IPokemon } from "./Pokemon";
-import { IPokemonColor } from "./PokemonColor";
-import { IPokemonHabitat } from "./PokemonHabitat";
-import { IPokemonShape } from "./PokemonShape";
+import { EvolutionChain } from "../Evolution/EvolutionChain";
+import { Generation } from "../Games/Generation";
+import { Pokedex } from "../Games/Pokedex";
+import { PalParkArea } from "../Locations/PalParkArea";
+import { ApiResource } from "../Utility/ApiResourceList";
+import { Description, FlavorText, Name } from "../Utility/CommonModels";
+import { Language } from "../Utility/Language";
+import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import { EggGroup } from "./EggGroup";
+import { GrowthRate } from "./GrowthRate";
+import { Pokemon } from "./Pokemon";
+import { PokemonColor } from "./PokemonColor";
+import { PokemonHabitat } from "./PokemonHabitat";
+import { PokemonShape } from "./PokemonShape";
 
-export interface IPokemonSpecies {
+export interface PokemonSpecies {
     id: number;
     name: string;
     order: number;
@@ -24,40 +24,40 @@ export interface IPokemonSpecies {
     hatch_counter: number;
     has_gender_differences: boolean;
     forms_switchable: boolean;
-    growth_rate: INamedApiResource<IGrowthRate>;
-    pokedex_numbers: IPokemonSpeciesDexEntry[];
-    egg_groups: Array<INamedApiResource<IEggGroup>>;
-    color: INamedApiResource<IPokemonColor>;
-    shape: INamedApiResource<IPokemonShape>;
-    evolves_from_species: INamedApiResource<IPokemonSpecies>;
-    evolution_chain: IApiResource<IEvolutionChain>;
-    habitat: INamedApiResource<IPokemonHabitat>;
-    generation: INamedApiResource<IGeneration>;
-    names: IName[];
-    pal_park_encounters: IPalParkEnounterArea[];
-    flavor_text_entries: IFlavorText[];
-    form_descriptions: IDescription[];
-    genera: IGenus[];
-    varieties: IPokemonSpeciesVariety[];
+    growth_rate: NamedApiResource<GrowthRate>;
+    pokedex_numbers: PokemonSpeciesDexEntry[];
+    egg_groups: Array<NamedApiResource<EggGroup>>;
+    color: NamedApiResource<PokemonColor>;
+    shape: NamedApiResource<PokemonShape>;
+    evolves_from_species: NamedApiResource<PokemonSpecies>;
+    evolution_chain: ApiResource<EvolutionChain>;
+    habitat: NamedApiResource<PokemonHabitat>;
+    generation: NamedApiResource<Generation>;
+    names: Name[];
+    pal_park_encounters: PalParkEnounterArea[];
+    flavor_text_entries: FlavorText[];
+    form_descriptions: Description[];
+    genera: Genus[];
+    varieties: PokemonSpeciesVariety[];
 }
 
-export interface IGenus {
+export interface Genus {
     genus: string;
-    language: INamedApiResource<ILanguage>;
+    language: NamedApiResource<Language>;
 }
 
-export interface IPokemonSpeciesDexEntry {
+export interface PokemonSpeciesDexEntry {
     entry_number: number;
-    pokedex: INamedApiResource<IPokedex>;
+    pokedex: NamedApiResource<Pokedex>;
 }
 
-export interface IPalParkEnounterArea {
+export interface PalParkEnounterArea {
     base_score: number;
     rate: number;
-    area: INamedApiResource<IPalParkArea>;
+    area: NamedApiResource<PalParkArea>;
 }
 
-export interface IPokemonSpeciesVariety {
+export interface PokemonSpeciesVariety {
     is_default: boolean;
-    pokemon: INamedApiResource<IPokemon>;
+    pokemon: NamedApiResource<Pokemon>;
 }

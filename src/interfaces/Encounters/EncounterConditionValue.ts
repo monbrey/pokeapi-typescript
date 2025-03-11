@@ -1,10 +1,10 @@
-import { Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { EncounterCondition } from "./EncounterCondition";
+import type { Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { EncounterCondition } from "./EncounterCondition";
 
-export interface EncounterConditionValue {
-    id: number;
-    name: string;
-    condition: ;
-    names: Name[];
-}
+export type EncounterConditionValue = {
+	condition: NamedApiResource<EncounterCondition>;
+	id: number;
+	name: string;
+	names: Name[];
+};

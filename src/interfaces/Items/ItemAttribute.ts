@@ -1,11 +1,11 @@
-import { Description, Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { Item } from "./Item";
+import type { Description, Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { Item } from "./Item";
 
-export interface ItemAttribute {
-    id: number;
-    name: string;
-    items: ;
-    names: Name[];
-    descriptions: Description[];
-}
+export type ItemAttribute = {
+	descriptions: Description[];
+	id: number;
+	items: NamedApiResource<Item>[];
+	name: string;
+	names: Name[];
+};

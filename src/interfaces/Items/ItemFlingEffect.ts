@@ -1,10 +1,10 @@
-import { Effect } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { Item } from "./Item";
+import type { Effect } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { Item } from "./Item";
 
-export interface ItemFlingEffect {
-    id: number;
-    name: string;
-    effect_entries: Effect[];
-    items: ;
-}
+export type ItemFlingEffect = {
+	effect_entries: Effect[];
+	id: number;
+	items: NamedApiResource<Item>[];
+	name: string;
+};

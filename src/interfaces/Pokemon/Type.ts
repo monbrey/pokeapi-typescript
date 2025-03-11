@@ -1,32 +1,32 @@
-import { Generation } from "../Games/Generation";
-import { Move } from "../Moves/Move";
-import { MoveDamageClass } from "../Moves/MoveDamageClass";
-import { GenerationGameIndex, Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { Pokemon } from "./Pokemon";
+import type { Generation } from "../Games/Generation";
+import type { Move } from "../Moves/Move";
+import type { MoveDamageClass } from "../Moves/MoveDamageClass";
+import type { GenerationGameIndex, Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { Pokemon } from "./Pokemon";
 
-export interface Type {
-    id: number;
-    name: string;
-    damage_relations: TypeRelations;
-    game_indices: GenerationGameIndex[];
-    generation: NamedApiResource<Generation>;
-    move_damage_class: NamedApiResource<MoveDamageClass>;
-    names: Name[];
-    pokemon: TypePokemon[];
-    moves: NamedApiResource<Move>;
-}
+export type Type = {
+	damage_relations: TypeRelations;
+	game_indices: GenerationGameIndex[];
+	generation: NamedApiResource<Generation>;
+	id: number;
+	move_damage_class: NamedApiResource<MoveDamageClass>;
+	moves: NamedApiResource<Move>;
+	name: string;
+	names: Name[];
+	pokemon: TypePokemon[];
+};
 
-export interface TypePokemon {
-    slot: number;
-    pokemon: NamedApiResource<Pokemon>;
-}
+export type TypePokemon = {
+	pokemon: NamedApiResource<Pokemon>;
+	slot: number;
+};
 
-export interface TypeRelations {
-    no_damage_to: ;
-    half_damage_to: ;
-    double_damage_to: ;
-    no_damage_from: ;
-    half_damage_from: ;
-    double_damage_from: ;
-}
+export type TypeRelations = {
+	double_damage_from: NamedApiResource<Type>[];
+	double_damage_to: NamedApiResource<Type>[];
+	half_damage_from: NamedApiResource<Type>[];
+	half_damage_to: NamedApiResource<Type>[];
+	no_damage_from: NamedApiResource<Type>[];
+	no_damage_to: NamedApiResource<Type>[];
+};

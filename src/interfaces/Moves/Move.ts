@@ -1,88 +1,88 @@
-import { ContestEffect } from "../Contests/ContestEffect";
-import { ContestType } from "../Contests/ContestType";
-import { SuperContestEffect } from "../Contests/SuperContestEffect";
-import { Generation } from "../Games/Generation";
-import { VersionGroup } from "../Games/VersionGroup";
-import { AbilityEffectChange } from "../Pokemon/Ability";
-import { Stat } from "../Pokemon/Stat";
-import { Type } from "../Pokemon/Type";
-import { ApiResource } from "../Utility/ApiResourceList";
-import { MachineVersionDetail, Name, VerboseEffect } from "../Utility/CommonModels";
-import { Language } from "../Utility/Language";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { MoveAilment } from "./MoveAilment";
-import { MoveCategory } from "./MoveCategory";
-import { MoveDamageClass } from "./MoveDamageClass";
-import { MoveTarget } from "./MoveTarget";
+import type { ContestEffect } from "../Contests/ContestEffect";
+import type { ContestType } from "../Contests/ContestType";
+import type { SuperContestEffect } from "../Contests/SuperContestEffect";
+import type { Generation } from "../Games/Generation";
+import type { VersionGroup } from "../Games/VersionGroup";
+import type { AbilityEffectChange } from "../Pokemon/Ability";
+import type { Stat } from "../Pokemon/Stat";
+import type { Type } from "../Pokemon/Type";
+import type { ApiResource } from "../Utility/ApiResourceList";
+import type { MachineVersionDetail, Name, VerboseEffect } from "../Utility/CommonModels";
+import type { Language } from "../Utility/Language";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { MoveAilment } from "./MoveAilment";
+import type { MoveCategory } from "./MoveCategory";
+import type { MoveDamageClass } from "./MoveDamageClass";
+import type { MoveTarget } from "./MoveTarget";
 
-export interface Move {
-    id: number;
-    name: string;
-    accuracy: number;
-    effect_chance: number;
-    pp: number;
-    priority: number;
-    power: number;
-    contest_combos: ContestComboSets;
-    contest_type: NamedApiResource<ContestType>;
-    contest_effect: ApiResource<ContestEffect>;
-    damage_class: NamedApiResource<MoveDamageClass>;
-    effect_entries: VerboseEffect[];
-    effect_changes: AbilityEffectChange[];
-    flavor_text_entries: MoveFlavorText[];
-    generation: NamedApiResource<Generation>;
-    machines: MachineVersionDetail[];
-    meta: MoveMetaData;
-    names: Name[];
-    past_values: PastMoveStatValues[];
-    stat_changes: MoveStatChange[];
-    super_contest_effect: ApiResource<SuperContestEffect>;
-    target: NamedApiResource<MoveTarget>;
-    type: NamedApiResource<Type>;
-}
+export type Move = {
+	accuracy: number;
+	contest_combos: ContestComboSets;
+	contest_effect: ApiResource<ContestEffect>;
+	contest_type: NamedApiResource<ContestType>;
+	damage_class: NamedApiResource<MoveDamageClass>;
+	effect_chance: number;
+	effect_changes: AbilityEffectChange[];
+	effect_entries: VerboseEffect[];
+	flavor_text_entries: MoveFlavorText[];
+	generation: NamedApiResource<Generation>;
+	id: number;
+	machines: MachineVersionDetail[];
+	meta: MoveMetaData;
+	name: string;
+	names: Name[];
+	past_values: PastMoveStatValues[];
+	power: number;
+	pp: number;
+	priority: number;
+	stat_changes: MoveStatChange[];
+	super_contest_effect: ApiResource<SuperContestEffect>;
+	target: NamedApiResource<MoveTarget>;
+	type: NamedApiResource<Type>;
+};
 
-export interface ContestComboSets {
-    normal: ContestComboDetail;
-    super: ContestComboDetail;
-}
+export type ContestComboSets = {
+	normal: ContestComboDetail;
+	super: ContestComboDetail;
+};
 
-export interface ContestComboDetail {
-    use_before: ;
-    use_after: ;
-}
+export type ContestComboDetail = {
+	use_after: NamedApiResource<Move>[];
+	use_before: NamedApiResource<Move>[];
+};
 
-export interface MoveFlavorText {
-    flavor_text: string;
-    language: NamedApiResource<Language>;
-    version_group: NamedApiResource<VersionGroup>;
-}
+export type MoveFlavorText = {
+	flavor_text: string;
+	language: NamedApiResource<Language>;
+	version_group: NamedApiResource<VersionGroup>;
+};
 
-export interface MoveMetaData {
-    ailment: NamedApiResource<MoveAilment>;
-    category: NamedApiResource<MoveCategory>;
-    min_hits: number;
-    max_hits: number;
-    min_turns: number;
-    max_turns: number;
-    drain: number;
-    healing: number;
-    crit_rate: number;
-    ailment_chance: number;
-    flinch_chance: number;
-    stat_chance: number;
-}
+export type MoveMetaData = {
+	ailment: NamedApiResource<MoveAilment>;
+	ailment_chance: number;
+	category: NamedApiResource<MoveCategory>;
+	crit_rate: number;
+	drain: number;
+	flinch_chance: number;
+	healing: number;
+	max_hits: number;
+	max_turns: number;
+	min_hits: number;
+	min_turns: number;
+	stat_chance: number;
+};
 
-export interface MoveStatChange {
-    change: number;
-    stat: NamedApiResource<Stat>;
-}
+export type MoveStatChange = {
+	change: number;
+	stat: NamedApiResource<Stat>;
+};
 
-export interface PastMoveStatValues {
-    accuracy: number;
-    effect_chance: number;
-    power: number;
-    pp: number;
-    effect_entries: VerboseEffect[];
-    type: NamedApiResource<Type>;
-    version_group: NamedApiResource<VersionGroup>;
-}
+export type PastMoveStatValues = {
+	accuracy: number;
+	effect_chance: number;
+	effect_entries: VerboseEffect[];
+	power: number;
+	pp: number;
+	type: NamedApiResource<Type>;
+	version_group: NamedApiResource<VersionGroup>;
+};

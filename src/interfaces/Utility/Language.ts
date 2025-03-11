@@ -1,10 +1,10 @@
-import { Name } from "./CommonModels";
+import type { Name } from "./CommonModels";
 
-export interface Language {
-    id: number;
-    name: string;
-    official: boolean;
-    iso639: string;
-    iso3166: string;
-    names: Name[];
-}
+export type Language = {
+	id: number;
+	iso3166: string;
+	iso639: string;
+	name: string;
+	names: Name[];
+	official: boolean;
+};

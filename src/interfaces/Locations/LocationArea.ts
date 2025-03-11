@@ -1,31 +1,31 @@
-import { EncounterMethod } from "../Encounters/EncounterMethod";
-import { Version } from "../Games/Version";
-import { Pokemon } from "../Pokemon/Pokemon";
-import { Name, VersionEncounterDetail } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { Location } from "./Location";
+import type { EncounterMethod } from "../Encounters/EncounterMethod";
+import type { Version } from "../Games/Version";
+import type { Pokemon } from "../Pokemon/Pokemon";
+import type { Name, VersionEncounterDetail } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { Location } from "./Location";
 
-export interface LocationArea {
-    id: number;
-    name: string;
-    game_index: number;
-    encounter_method_rates: EncounterMethodRate[];
-    location: NamedApiResource<Location>;
-    names: Name[];
-    pokemon_encounters: PokemonEncounter[];
-}
+export type LocationArea = {
+	encounter_method_rates: EncounterMethodRate[];
+	game_index: number;
+	id: number;
+	location: NamedApiResource<Location>;
+	name: string;
+	names: Name[];
+	pokemon_encounters: PokemonEncounter[];
+};
 
-export interface EncounterMethodRate {
-    encounter_method: NamedApiResource<EncounterMethod>;
-    version_details: EncounterVersionDetails[];
-}
+export type EncounterMethodRate = {
+	encounter_method: NamedApiResource<EncounterMethod>;
+	version_details: EncounterVersionDetails[];
+};
 
-export interface EncounterVersionDetails {
-    rate: number;
-    version_details: NamedApiResource<Version>;
-}
+export type EncounterVersionDetails = {
+	rate: number;
+	version_details: NamedApiResource<Version>;
+};
 
-export interface PokemonEncounter {
-    pokemon: NamedApiResource<Pokemon>;
-    version_details: VersionEncounterDetail[];
-}
+export type PokemonEncounter = {
+	pokemon: NamedApiResource<Pokemon>;
+	version_details: VersionEncounterDetail[];
+};

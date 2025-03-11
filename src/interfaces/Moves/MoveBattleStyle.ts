@@ -1,7 +1,7 @@
-import { Name } from "../Utility/CommonModels";
+import type { Name } from "../Utility/CommonModels";
 
-export interface MoveBattleStyle {
-    id: number;
-    name: string;
-    names: Name[];
-}
+export type MoveBattleStyle = {
+	id: number;
+	name: string;
+	names: Name[];
+};

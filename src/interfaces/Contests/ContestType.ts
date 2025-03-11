@@ -1,16 +1,16 @@
-import { BerryFlavor } from "../Berries/BerryFlavor";
-import { Language } from "../Utility/Language";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { BerryFlavor } from "../Berries/BerryFlavor";
+import type { Language } from "../Utility/Language";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
 
-export interface ContestType {
-    id: number;
-    name: string;
-    berry_flavor: NamedApiResource<BerryFlavor>;
-    names: ContestName[];
-}
+export type ContestType = {
+	berry_flavor: NamedApiResource<BerryFlavor>;
+	id: number;
+	name: string;
+	names: ContestName[];
+};
 
-export interface ContestName {
-    name: string;
-    color: string;
-    language: NamedApiResource<Language>;
-}
+export type ContestName = {
+	color: string;
+	language: NamedApiResource<Language>;
+	name: string;
+};

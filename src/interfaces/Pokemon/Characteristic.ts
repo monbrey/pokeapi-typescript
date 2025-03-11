@@ -1,5 +1,5 @@
-export interface Characteristic {
-    id: number;
-    gene_modulo: number;
-    possible_values: number[];
-}
+export type Characteristic = {
+	gene_modulo: number;
+	id: number;
+	possible_values: number[];
+};

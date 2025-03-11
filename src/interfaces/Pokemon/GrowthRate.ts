@@ -1,17 +1,17 @@
-import { Description} from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { PokemonSpecies } from "./PokemonSpecies";
+import type { Description } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { PokemonSpecies } from "./PokemonSpecies";
 
-export interface GrowthRate {
-    id: number;
-    name: string;
-    formula: string;
-    descriptions: Description[];
-    levels: GrowthRateExperienceLevel[];
-    pokemon_species: ;
-}
+export type GrowthRate = {
+	descriptions: Description[];
+	formula: string;
+	id: number;
+	levels: GrowthRateExperienceLevel[];
+	name: string;
+	pokemon_species: NamedApiResource<PokemonSpecies>[];
+};
 
-export interface GrowthRateExperienceLevel {
-    level: number;
-    experience: number;
-}
+export type GrowthRateExperienceLevel = {
+	experience: number;
+	level: number;
+};

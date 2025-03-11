@@ -1,7 +1,8 @@
 {
   "name": "pokeapi-typescript",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Typescript SDK for PokeAPI (https://pokeapi.co)",
+  "type": "module",
   "files": [
     "dist/**/*"
   ],
@@ -42,6 +43,7 @@
     "typescript-eslint": "^8.26.1"
   },
   "dependencies": {
-    "@discordjs/collection": "^2.1.1"
+    "@discordjs/collection": "^2.1.1",
+    "pokeapi-typescript": "^3.0.0"
   }
 }

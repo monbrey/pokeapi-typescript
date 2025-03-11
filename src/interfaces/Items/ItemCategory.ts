@@ -1,12 +1,12 @@
-import { Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { Item } from "./Item";
-import { ItemPocket } from "./ItemPocket";
+import type { Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { Item } from "./Item";
+import type { ItemPocket } from "./ItemPocket";
 
-export interface ItemCategory {
-    id: number;
-    name: string;
-    items: ;
-    names: Name[];
-    pocket: NamedApiResource<ItemPocket>;
-}
+export type ItemCategory = {
+	id: number;
+	items: NamedApiResource<Item>[];
+	name: string;
+	names: Name[];
+	pocket: NamedApiResource<ItemPocket>;
+};

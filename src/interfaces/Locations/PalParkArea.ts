@@ -1,16 +1,16 @@
-import { PokemonSpecies } from "../Pokemon/PokemonSpecies";
-import { Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { PokemonSpecies } from "../Pokemon/PokemonSpecies";
+import type { Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
 
-export interface PalParkArea {
-    id: number;
-    name: string;
-    names: Name[];
-    pokemon_encounters: PalParkEncounterSpecies[];
-}
+export type PalParkArea = {
+	id: number;
+	name: string;
+	names: Name[];
+	pokemon_encounters: PalParkEncounterSpecies[];
+};
 
-export interface PalParkEncounterSpecies {
-    base_socre: number;
-    rate: number;
-    pokemon_species: NamedApiResource<PokemonSpecies>;
-}
+export type PalParkEncounterSpecies = {
+	base_socre: number;
+	pokemon_species: NamedApiResource<PokemonSpecies>;
+	rate: number;
+};

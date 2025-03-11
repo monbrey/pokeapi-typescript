@@ -1,10 +1,10 @@
-import { Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { PokemonSpecies } from "./PokemonSpecies";
+import type { Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { PokemonSpecies } from "./PokemonSpecies";
 
-export interface PokemonHabitat {
-    id: number;
-    name: string;
-    names: Name[];
-    pokemon_species: ;
-}
+export type PokemonHabitat = {
+	id: number;
+	name: string;
+	names: Name[];
+	pokemon_species: NamedApiResource<PokemonSpecies>[];
+};

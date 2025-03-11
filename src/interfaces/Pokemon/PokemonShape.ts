@@ -1,17 +1,17 @@
-import { Name } from "../Utility/CommonModels";
-import { Language } from "../Utility/Language";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { PokemonSpecies } from "./PokemonSpecies";
+import type { Name } from "../Utility/CommonModels";
+import type { Language } from "../Utility/Language";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { PokemonSpecies } from "./PokemonSpecies";
 
-export interface PokemonShape {
-    id: number;
-    name: string;
-    awesome_names: AwesomeName[];
-    names: Name[];
-    pokemons_species: ;
-}
+export type PokemonShape = {
+	awesome_names: AwesomeName[];
+	id: number;
+	name: string;
+	names: Name[];
+	pokemons_species: PokemonSpecies;
+};
 
-export interface AwesomeName {
-    awesome_name: string;
-    language: NamedApiResource<Language>;
-}
+export type AwesomeName = {
+	awesome_name: string;
+	language: NamedApiResource<Language>;
+};

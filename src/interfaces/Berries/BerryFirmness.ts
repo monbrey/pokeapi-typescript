@@ -1,10 +1,10 @@
-import { Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { Berry } from "./Berry";
+import type { Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { Berry } from "./Berry";
 
-export interface BerryFirmness {
-    id: number;
-    name: string;
-    berries: ;
-    names: Name[];
-}
+export type BerryFirmness = {
+	berries: NamedApiResource<Berry>[];
+	id: number;
+	name: string;
+	names: Name[];
+};

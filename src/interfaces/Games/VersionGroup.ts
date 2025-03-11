@@ -1,17 +1,17 @@
-import { Region } from "../Locations/Region";
-import { MoveLearnMethod } from "../Moves/MoveLearnMethod";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { Generation } from "./Generation";
-import { Pokedex } from "./Pokedex";
-import { Version } from "./Version";
+import type { Region } from "../Locations/Region";
+import type { MoveLearnMethod } from "../Moves/MoveLearnMethod";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { Generation } from "./Generation";
+import type { Pokedex } from "./Pokedex";
+import type { Version } from "./Version";
 
-export interface VersionGroup {
-    id: number;
-    name: string;
-    order: number;
-    generation: NamedApiResource<Generation>;
-    move_learn_methods: ;
-    pokedexes: ;
-    regions: ;
-    versions: ;
-}
+export type VersionGroup = {
+	generation: NamedApiResource<Generation>;
+	id: number;
+	move_learn_methods: NamedApiResource<MoveLearnMethod>[];
+	name: string;
+	order: number;
+	pokedexes: NamedApiResource<Pokedex>[];
+	regions: NamedApiResource<Region>[];
+	versions: NamedApiResource<Version>[];
+};

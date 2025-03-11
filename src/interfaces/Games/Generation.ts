@@ -1,20 +1,20 @@
-import { Region } from "../Locations/Region";
-import { Move } from "../Moves/Move";
-import { Ability } from "../Pokemon/Ability";
-import { PokemonSpecies } from "../Pokemon/PokemonSpecies";
-import { Type } from "../Pokemon/Type";
-import { Name } from "../Utility/CommonModels";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { VersionGroup } from "./VersionGroup";
+import type { Region } from "../Locations/Region";
+import type { Move } from "../Moves/Move";
+import type { Ability } from "../Pokemon/Ability";
+import type { PokemonSpecies } from "../Pokemon/PokemonSpecies";
+import type { Type } from "../Pokemon/Type";
+import type { Name } from "../Utility/CommonModels";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { VersionGroup } from "./VersionGroup";
 
-export interface Generation {
-    id: number;
-    name: string;
-    abilities: ;
-    names: Name[];
-    main_region: NamedApiResource<Region>;
-    moves: ;
-    pokemon_species: ;
-    types: ;
-    version_groups: ;
-}
+export type Generation = {
+	abilities: NamedApiResource<Ability>[];
+	id: number;
+	main_region: NamedApiResource<Region>;
+	moves: NamedApiResource<Move>[];
+	name: string;
+	names: Name[];
+	pokemon_species: NamedApiResource<PokemonSpecies>[];
+	types: NamedApiResource<Type>[];
+	version_groups: NamedApiResource<VersionGroup>[];
+};

@@ -1,63 +1,63 @@
-import { EvolutionChain } from "../Evolution/EvolutionChain";
-import { Generation } from "../Games/Generation";
-import { Pokedex } from "../Games/Pokedex";
-import { PalParkArea } from "../Locations/PalParkArea";
-import { ApiResource } from "../Utility/ApiResourceList";
-import { Description, FlavorText, Name } from "../Utility/CommonModels";
-import { Language } from "../Utility/Language";
-import { NamedApiResource } from "../Utility/NamedApiResourceList";
-import { EggGroup } from "./EggGroup";
-import { GrowthRate } from "./GrowthRate";
-import { Pokemon } from "./Pokemon";
-import { PokemonColor } from "./PokemonColor";
-import { PokemonHabitat } from "./PokemonHabitat";
-import { PokemonShape } from "./PokemonShape";
+import type { EvolutionChain } from "../Evolution/EvolutionChain";
+import type { Generation } from "../Games/Generation";
+import type { Pokedex } from "../Games/Pokedex";
+import type { PalParkArea } from "../Locations/PalParkArea";
+import type { ApiResource } from "../Utility/ApiResourceList";
+import type { Description, FlavorText, Name } from "../Utility/CommonModels";
+import type { Language } from "../Utility/Language";
+import type { NamedApiResource } from "../Utility/NamedApiResourceList";
+import type { EggGroup } from "./EggGroup";
+import type { GrowthRate } from "./GrowthRate";
+import type { Pokemon } from "./Pokemon";
+import type { PokemonColor } from "./PokemonColor";
+import type { PokemonHabitat } from "./PokemonHabitat";
+import type { PokemonShape } from "./PokemonShape";
 
-export interface PokemonSpecies {
-    id: number;
-    name: string;
-    order: number;
-    gender_rate: number;
-    capture_rate: number;
-    base_happiness: number;
-    is_baby: boolean;
-    hatch_counter: number;
-    has_gender_differences: boolean;
-    forms_switchable: boolean;
-    growth_rate: NamedApiResource<GrowthRate>;
-    pokedex_numbers: PokemonSpeciesDexEntry[];
-    egg_groups: ;
-    color: NamedApiResource<PokemonColor>;
-    shape: NamedApiResource<PokemonShape>;
-    evolves_from_species: NamedApiResource<PokemonSpecies>;
-    evolution_chain: ApiResource<EvolutionChain>;
-    habitat: NamedApiResource<PokemonHabitat>;
-    generation: NamedApiResource<Generation>;
-    names: Name[];
-    pal_park_encounters: PalParkEnounterArea[];
-    flavor_text_entries: FlavorText[];
-    form_descriptions: Description[];
-    genera: Genus[];
-    varieties: PokemonSpeciesVariety[];
-}
+export type PokemonSpecies = {
+	base_happiness: number;
+	capture_rate: number;
+	color: NamedApiResource<PokemonColor>;
+	egg_groups: NamedApiResource<EggGroup>[];
+	evolution_chain: ApiResource<EvolutionChain>;
+	evolves_from_species: NamedApiResource<PokemonSpecies>;
+	flavor_text_entries: FlavorText[];
+	form_descriptions: Description[];
+	forms_switchable: boolean;
+	gender_rate: number;
+	genera: Genus[];
+	generation: NamedApiResource<Generation>;
+	growth_rate: NamedApiResource<GrowthRate>;
+	habitat: NamedApiResource<PokemonHabitat>;
+	has_gender_differences: boolean;
+	hatch_counter: number;
+	id: number;
+	is_baby: boolean;
+	name: string;
+	names: Name[];
+	order: number;
+	pal_park_encounters: PalParkEnounterArea[];
+	pokedex_numbers: PokemonSpeciesDexEntry[];
+	shape: NamedApiResource<PokemonShape>;
+	varieties: PokemonSpeciesVariety[];
+};
 
-export interface Genus {
-    genus: string;
-    language: NamedApiResource<Language>;
-}
+export type Genus = {
+	genus: string;
+	language: NamedApiResource<Language>;
+};
 
-export interface PokemonSpeciesDexEntry {
-    entry_number: number;
-    pokedex: NamedApiResource<Pokedex>;
-}
+export type PokemonSpeciesDexEntry = {
+	entry_number: number;
+	pokedex: NamedApiResource<Pokedex>;
+};
 
-export interface PalParkEnounterArea {
-    base_score: number;
-    rate: number;
-    area: NamedApiResource<PalParkArea>;
-}
+export type PalParkEnounterArea = {
+	area: NamedApiResource<PalParkArea>;
+	base_score: number;
+	rate: number;
+};
 
-export interface PokemonSpeciesVariety {
-    is_default: boolean;
-    pokemon: NamedApiResource<Pokemon>;
-}
+export type PokemonSpeciesVariety = {
+	is_default: boolean;
+	pokemon: NamedApiResource<Pokemon>;
+};

@@ -1,7 +1,6 @@
 import type { NamedBase } from "../interfaces/Utility/ApiResourceList.js";
 import type { NamedApiResourceList } from "../interfaces/Utility/NamedApiResourceList.js";
-import type { EndpointParam } from "./Endpoint";
-import { Endpoint } from "./Endpoint";
+import { Endpoint, type EndpointParam } from "./Endpoint.js";
 
 export type NamedEndpointParam = EndpointParam | string;
 
